@@ -63,7 +63,7 @@ int	threearg(char *argv1, char *argv2, char *argv3)
 	return (0);
 }
 
-int	fourarg(char *argv1, char *argv2, char *argv3, char *argv4)
+/* int	fourarg(char *argv1, char *argv2, char *argv3, char *argv4)
 {
 	int	a;
 	int	b;
@@ -86,7 +86,7 @@ int	fourarg(char *argv1, char *argv2, char *argv3, char *argv4)
 	else
 		all_case_two(a, b, c, d);
 	return (0);
-}
+} */
 
 
 /*

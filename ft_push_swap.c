@@ -12,6 +12,26 @@
 
 #include "ft_push_swap.h"
 
+
+t_list	*create_stack(int n)
+{
+	t_list	*stack_a;
+
+	stack_a = ft_lstnew(n);
+	return (stack_a);
+}
+//main de prueba...
+int	main(int argc, char *argv[])
+{
+	t_list	*ptr;
+	int	a;
+
+	a = ft_atoi(argv[1]);
+	ptr = create_stack(a);
+	printf("%d", ptr->content);
+}
+
+/* 
 int	main(int argc, char *argv[])
 {
 	int	x;
@@ -33,7 +53,7 @@ int	main(int argc, char *argv[])
 		twoarg (argv[1], argv[2]);
 	else if (argc == 4)
 		threearg (argv[1], argv[2], argv[3]);
-	else if (argc == 5)
-		fourarg (argv[1], argv[2], argv[3], argv[4]);
+ 	//else if (argc == 5)
+		//fourarg (argv[1], argv[2], argv[3], argv[4]); 
 	return (0);
-}
+} */
