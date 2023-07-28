@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.c                                     :+:      :+:    :+:   */
+/*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,44 +12,31 @@
 
 #include "ft_push_swap.h"
 
-
-
-int	main(int argc, char *argv[])
+void	create_stack(t_list **lst, int n)
 {
-	t_list	*stack;
-	int		x;
-	int		a;
-/* 	int		argnumber; */
+	t_list	*aux;
+
+	aux = ft_lstnew(n);
+	ft_lstadd_back(lst, aux);
+	printf("|%p|\n||%p||\n", (*lst)->next, aux);
+}
+
+
+
+// prueba...para create stack
+/* int	main(int argc, char *argv[])
+{
+	//t_list	*stack;
+	//int	a;
+	//int x;
 
 	if (!argc)
 		exit(1);
-/*	x = 0;
-	argnumber = 1;
- 	while (argnumber < argc)
-	{
-		x = isnumber(argv[argnumber]);
-		if (x == -1)
-		{
-			ft_putstr("error");
-			return (0);
-		}
-		argnumber++;
-	} */
 	x = 1;
-	if (argc == 3)
-		twoarg (argv[1], argv[2]);
-	else if (argc == 4)
-		threearg (argv[1], argv[2], argv[3]);
- 	//else if (argc == 5)
-		//fourarg (argv[1], argv[2], argv[3], argv[4]); 
-	else
-		while (x < argc);
-		{
-			a = ft_atoi(argv[x]);
-			create_stack(&stack, a);
-			x++;
-		}
-	return (0);
-} 
-
-/*to do, 1 bloquear un argumento */
+	while (x < argc)
+	{
+		a = ft_atoi(argv[x]);
+		create_stack(&stack, a);
+		x++;
+	}
+} */

@@ -16,7 +16,14 @@ int	twoarg(char *argv1, char *argv2)
 {
 	int	x;
 	int	y;
+	int	a;
 
+	a = ft_isnumber(argv1);
+	if (a == -1)
+		ft_exit();
+	a = ft_isnumber(argv2);
+	if (a == -1)
+		ft_exit();
 	x = ft_atoi(argv1);
 	y = ft_atoi(argv2);
 	if (x == y)
@@ -30,7 +37,7 @@ int	twoarg(char *argv1, char *argv2)
 		return (0);
 	}
 	else
-		ft_putstr("ok\n");
+		ft_putstr("dffdfdfdfdfddok\n");
 	return (0);
 }
 

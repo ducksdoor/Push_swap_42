@@ -1,14 +1,13 @@
-NAME = push_swap.a
+NAME = push_swap
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
-AR = ar rcs
 
-
-SRCS =	ft_push_swap.c \
-		ft_push_swap_utils.c ft_list_utils.c ft_list_utils_2.c \
+SRCS =	ft_push_swap.c ft_push_swap_utils.c ft_push_swap_utils_2.c\
+		ft_list_utils.c ft_list_utils_2.c \
 		ft_foo.c ft_foo_utils.c \
+		ft_stack.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -18,10 +17,10 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) 
-	@$(AR) $(NAME) $(OBJS) 
+	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
 
 clean:
-	@$(RM) $(OBJS_BONUS) $(OBJS)
+	@$(RM) $(OBJS)
 
 fclean: clean
 	@$(RM) $(NAME)

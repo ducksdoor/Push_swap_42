@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -24,8 +25,12 @@ typedef struct s_list
 
 int		ft_putchar(char s);
 void	ft_putstr(char *s);
-int		isnumber(char *number);
+int		ft_isnumber(char *number);
+void	ft_exit();
 int		ft_atoi(const char *str);
+void	ft_bzero(void *s, int n);
+void	*ft_calloc(size_t count, size_t size);
+
 int		twoarg(char *argv1, char *argv2);
 int		threearg(char *argv1, char *argv2, char *argv3);
 /* int		fourarg(char *argv1, char *argv2, char *argv3, char *argv4); */
@@ -33,7 +38,7 @@ void	all_case_one(int a, int b, int c, int d);
 void	all_case_four(int a, int b, int c, int d);
 void	all_case_two(int a, int b, int c, int d);
 
-t_list	*create_stack(int n);
+void	create_stack(t_list **stack, int n);
 
 //void	ft_lstdelone(t_list *lst, void (*del)(void*));
 //void	ft_lstclear(t_list **lst, void (*del)(void*));

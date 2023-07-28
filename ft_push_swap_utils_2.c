@@ -12,70 +12,22 @@
 
 #include "ft_push_swap.h"
 
-int	ft_atoi(const char *str)
+void	ft_exit()
 {
-	int	res;
-	int	sign;
-	int	i;
+	ft_putstr("Solo se pueden algoritmear numeros...");
+	exit (1);
+}
 
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+void	ft_bzero(void *s, int n)
+{
+	char			*dst;
+	int	x;
+
+	dst = s;
+	x = 0;
+	while (x < n)
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
+		dst[x] = '\0';
+		++x;
 	}
-	return (res * sign);
-}
-
-int	ft_isnumber(char *number)
-{
-	int	cont;
-
-	cont = 0;
-	while (number[cont])
-	{
-		if (number[cont] > 47 && number[cont] < 58)
-			cont++;
-		else
-			return (-1);
-	}
-	return (0);
-}
-
-int	ft_putchar(char s)
-{
-	write (1, &s, 1);
-	return (1);
-}
-
-void	ft_putstr(char *s)
-{
-	if (!s)
-		return ;
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*des;
-
-	if (size > 0 && count > ULONG_MAX / size)
-		return (NULL);
-	des = (void *)malloc(count * size);
-	if (des == NULL)
-		return (NULL);
-	ft_bzero(des, count * size);
-	return (des);
 }
