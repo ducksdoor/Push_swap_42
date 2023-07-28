@@ -73,12 +73,19 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
     Se trata de un archivo preparado para tipificar todas las funciones del programa.
     Ademas, facilita la ejecución de alguna función
     
-3 -> ft_push_swap_utils.c / ft_list_utils.c / ft_list_utils_2.c
+3 -> ft_push_swap_utils.c / ft_list_utils.c / ft_list_utils_2.c / ft_push_swap_utils_2.c
 
     En este archivo están las funciones útiles para este proyecto de la libft.
     Podria usar la libft. si. Pero me dio pereza...
     
-4 -> ft_foo.c / ft_foo_utils.c
+4 -> ft_foo.c / ft_foo_utils.c 
 
     Se trata de funciones que no tienen nada que ver con algoritmia
     Prepara la solución del codigo a lo bruto...
+
+5 -> ft_stack.c
+
+    En este archivo están las funciones que crean los dos stacks permitidos para el proyecto. 
+    Están creados con las funciones de listas que proponian en la parte bonus del proyecto Libft.
+    
+    
