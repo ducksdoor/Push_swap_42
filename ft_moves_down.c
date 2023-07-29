@@ -1,52 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack.c                                         :+:      :+:    :+:   */
+/*   ft_moves_down.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:36:49 by lortega-          #+#    #+#             */
-/*   Updated: 2023/07/25 21:35:31 by lortega-         ###   ########.fr       */
+/*   Updated: 2023/07/29 22:23:04 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	create_stack_a(t_list **lst, int n)
+void	ft_ra(t_list **lst, int bool)
 {
 	t_list	*aux;
 
-	aux = ft_lstnew(n);
+	aux = *lst;
+	*lst = aux->next;
+	aux->next = NULL;
 	ft_lstadd_back(lst, aux);
-	printf("contenido [%d]..", (*lst)->cont);
-	printf("contenido aux [%d]..", aux->cont);
-	printf("dirección del modulo 1 [%p]. Siguiente mod [%p] \n", (*lst)->next, aux);
-	printf("DIR LST:%p\n", lst);
+	printf("HEAD[%d].NEXT[%d]\n", (*lst)->cont, (*lst)->next->cont);
+	if (bool == 0)
+		ft_putstr("ra");
 }
 
-void	create_stack_b(t_list *lst_b, int n)
+void	ft_rb(t_list **lst, int bool)
 {
 	t_list	*aux;
 
-	aux = ft_lstnew(n);
-	ft_lstadd_back(&lst_b, aux);
+	aux = *lst;
+	*lst = aux->next;
+	aux->next = NULL;
+	ft_lstadd_back(lst, aux);
+	printf("HEAD[%d].NEXT[%d]\n", (*lst)->cont, (*lst)->next->cont);
+	if (bool == 0)
+		ft_putstr("rb");
 }
 
-
-// prueba...para create stack
-/* int	main(int argc, char *argv[])
+void	ft_rs(t_list **lst, t_list **lst2)
 {
-	//t_list	*stack;
-	//int	a;
-	//int x;
-
-	if (!argc)
-		exit(1);
-	x = 1;
-	while (x < argc)
-	{
-		a = ft_atoi(argv[x]);
-		create_stack(&stack, a);
-		x++;
-	}
-} */
+	ft_ra(lst, 1);
+	ft_rb(lst2, 1);
+	ft_putstr("rs");
+}

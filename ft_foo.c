@@ -20,10 +20,10 @@ int	twoarg(char *argv1, char *argv2)
 
 	a = ft_isnumber(argv1);
 	if (a == -1)
-		ft_exit();
+		ft_exit(1);
 	a = ft_isnumber(argv2);
 	if (a == -1)
-		ft_exit();
+		ft_exit(1);
 	x = ft_atoi(argv1);
 	y = ft_atoi(argv2);
 	if (x == y)
@@ -37,9 +37,34 @@ int	twoarg(char *argv1, char *argv2)
 		return (0);
 	}
 	else
-		ft_putstr("dffdfdfdfdfddok\n");
+		ft_putstr("ok\n");
 	return (0);
 }
+
+void	ft_compro(char *argv1, char *argv2, char *argv3)
+{
+	int	a;
+
+	a = ft_isnumber(argv1);
+	if (a == -1)
+	{
+		ft_putstr("el arg.1 no es un número. Puedes hacerlo mejor.");
+		ft_exit(1);
+	}
+		a = ft_isnumber(argv2);
+	if (a == -1)
+	{
+		ft_putstr("el arg.2 no es un número. Puedes hacerlo mejor.");
+		ft_exit(1);
+	}
+	a = ft_isnumber(argv3);
+	if (a == -1)
+	{
+		ft_putstr("el arg.3 no es un número. Puedes hacerlo mejor.");
+		ft_exit(1);
+	}
+}
+
 
 int	threearg(char *argv1, char *argv2, char *argv3)
 {
@@ -47,14 +72,12 @@ int	threearg(char *argv1, char *argv2, char *argv3)
 	int	n_two;
 	int	n_three;
 
+	ft_compro(argv1, argv2, argv3);
 	n_one = ft_atoi(argv1);
 	n_two = ft_atoi(argv2);
 	n_three = ft_atoi(argv3);
 	if (n_one == n_two || n_one == n_three || n_two == n_three)
-	{
-		ft_putstr("Numeros repetidos\n");
-		exit(1);
-	}
+		ft_exit(2);
 	if (n_one > n_two && n_two < n_three && n_three > n_one)
 		ft_putstr("sa\n");
 	else if (n_one > n_two && n_two > n_three && n_three < n_one)
@@ -69,32 +92,6 @@ int	threearg(char *argv1, char *argv2, char *argv3)
 		ft_putstr("ok");
 	return (0);
 }
-
-/* int	fourarg(char *argv1, char *argv2, char *argv3, char *argv4)
-{
-	int	a;
-	int	b;
-	int	c;
-	int	d;
-
-	a = ft_atoi(argv1);
-	b = ft_atoi(argv2);
-	c = ft_atoi(argv3);
-	d = ft_atoi(argv4);
-	if (a == b || a == c || b == c || a == d || b == d || c == d)
-	{
-		ft_putstr("Numeros repetidos\n");
-		exit(1);
-	}
-	if (a < b && a < c && a < d)
-		all_case_one (a, b, c, d);
-	else if (a > b && a > c && a > d)
-		all_case_four(a, b, c, d);
-	else
-		all_case_two(a, b, c, d);
-	return (0);
-} */
-
 
 /*
 

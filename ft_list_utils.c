@@ -8,7 +8,7 @@ t_list	*ft_lstnew(int n)
 	head = malloc(sizeof(t_list));
 	if (!head)
 		return (NULL);
-	head->content = n;
+	head->cont = n;
 	head->next = NULL;
 	return (head);
 }

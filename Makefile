@@ -7,7 +7,7 @@ RM = rm -f
 SRCS =	ft_push_swap.c ft_push_swap_utils.c ft_push_swap_utils_2.c\
 		ft_list_utils.c ft_list_utils_2.c \
 		ft_foo.c ft_foo_utils.c \
-		ft_stack.c \
+		ft_stack.c ft_moves_swap.c\
 
 OBJS = $(SRCS:.c=.o)
 

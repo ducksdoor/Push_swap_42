@@ -12,9 +12,14 @@
 
 #include "ft_push_swap.h"
 
-void	ft_exit()
+void	ft_exit(int a)
 {
-	ft_putstr("Solo se pueden algoritmear numeros...");
+	if (a == 1)
+		ft_putstr("Solo se pueden algoritmear numeros...");
+	if (a == 2)
+		ft_putstr("Tienes varios numeros repetidos");
+	if (a == 3)
+		ft_putstr("No has puesto args para pillar? estas despistad@?");
 	exit (1);
 }
 

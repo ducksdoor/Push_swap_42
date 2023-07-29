@@ -19,37 +19,36 @@ int	main(int argc, char *argv[])
 	t_list	*stack;
 	int		x;
 	int		a;
-/* 	int		argnumber; */
 
+	stack = NULL;
 	if (!argc)
 		exit(1);
-/*	x = 0;
-	argnumber = 1;
- 	while (argnumber < argc)
-	{
-		x = isnumber(argv[argnumber]);
-		if (x == -1)
-		{
-			ft_putstr("error");
-			return (0);
-		}
-		argnumber++;
-	} */
 	x = 1;
-	if (argc == 3)
+	if (argc == 1)
+		ft_exit(3);
+	else if (argc == 3)
 		twoarg (argv[1], argv[2]);
 	else if (argc == 4)
 		threearg (argv[1], argv[2], argv[3]);
  	//else if (argc == 5)
 		//fourarg (argv[1], argv[2], argv[3], argv[4]); 
-	else
-		while (x < argc);
+	else if (argc > 4)
+		while (x < argc)
 		{
+			a = 0;
 			a = ft_atoi(argv[x]);
-			create_stack(&stack, a);
+			create_stack_a(&stack, a);
+			printf("DIR STACK:%p\n", stack);
 			x++;
+			//printf("%d\n", stack->cont);
 		}
+	printf("PRE|%d|\n", stack->cont);
+	ft_r_a_or_b(&stack);
+	printf("POST:%d\n", stack->cont);
 	return (0);
 } 
 
-/*to do, 1 bloquear un argumento */
+/*to do:
+1 función que compruebe argumentos iguales para mas de 3 ...
+2 hacer función que printee el stack.
+*/

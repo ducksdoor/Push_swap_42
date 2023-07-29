@@ -65,6 +65,7 @@ void	ft_putstr(char *s)
 		ft_putchar(*s);
 		s++;
 	}
+	write (1, "\n", 1);
 }
 
 void	*ft_calloc(size_t count, size_t size)
