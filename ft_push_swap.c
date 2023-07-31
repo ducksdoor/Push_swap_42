@@ -38,17 +38,30 @@ int	main(int argc, char *argv[])
 			a = 0;
 			a = ft_atoi(argv[x]);
 			create_stack_a(&stack, a);
-			printf("DIR STACK:%p\n", stack);
+/* 			printf("DIR STACK:%p\n", stack); */
 			x++;
 			//printf("%d\n", stack->cont);
 		}
-	printf("PRE|%d|\n", stack->cont);
-	ft_r_a_or_b(&stack);
-	printf("POST:%d\n", stack->cont);
+//empiezan las pruebas, como cambia la forma de pedir los datos, dejo un ejemplo de cada...
+	showme(stack);
+	ft_ra (&stack, 0);
+	showme(stack);
+	ft_sa(stack, 0); 
+	showme(stack);
+	stack = ft_rra(stack, 0);
+	showme(stack);
+		//cierro prueba.
+
+/* 	printf("PRE|%d|\n", stack->cont);
+	
+	ft_ra
+	(&stack);
+	printf("POST:%d\n", stack->cont); */
 	return (0);
 } 
 
 /*to do:
 1 función que compruebe argumentos iguales para mas de 3 ...
-2 hacer función que printee el stack.
+2 no has probado que se puedan usar los movimientos dobles
+3 quiza estaria bien que todas las funciones pidieran y devolvieran lo mismo...
 */

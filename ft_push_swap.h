@@ -23,6 +23,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+void	showme(t_list *list);
+
 int		ft_putchar(char s);
 void	ft_putstr(char *s);
 int		ft_isnumber(char *number);
@@ -49,6 +51,9 @@ void	ft_ss(t_list *lst, t_list *lst2);
 void	ft_ra(t_list **lst, int bool);
 void	ft_rb(t_list **lst, int bool);
 void	ft_rs(t_list **lst, t_list **lst2);
+t_list	*ft_rra(t_list *lst, int bool);
+t_list	*ft_rrb(t_list *lst, int bool);
+void	ft_rrr(t_list *lst, t_list *lst2);
 //void	ft_lstdelone(t_list *lst, void (*del)(void*));
 //void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstadd_front(t_list **lst, t_list *new);

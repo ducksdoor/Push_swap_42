@@ -83,5 +83,10 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
     Se trata de funciones que no tienen nada que ver con algoritmia
     Prepara la solución del codigo a lo bruto...
 
-5 -> ft_moves_swap.c / ft_moves_down.c
+5 -> ft_moves_swap.c / ft_moves_down.c / ft_moves_up.c
     En estos archivos se tipifican los movimientos que ira haciendo el argoritmo del proyecto.
+    Como dato a tener en cuenta, en el código de mi proyecto uso un booleano para definir 
+    como se ha entrado en las funciones, y por tanto, definir que es lo que se trendra que printear.
+
+6 -> ft_showme.c
+    Este archivo no se entrego en el proyecto, es la función que me deja comprobar que las cosas están funcionando bien.
