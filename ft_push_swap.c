@@ -16,13 +16,15 @@
 
 int	main(int argc, char *argv[])
 {
-	t_list	*stack;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	int		x;
 	int		a;
 
-	stack = NULL;
+	stack_a = NULL;
+	stack_b = ft_lstnew(0);
 	if (!argc)
-		exit(1);
+		ft_exit(3);
 	x = 1;
 	if (argc == 1)
 		ft_exit(3);
@@ -36,20 +38,23 @@ int	main(int argc, char *argv[])
 		while (x < argc)
 		{
 			a = 0;
+			ft_check(argv[x]);
 			a = ft_atoi(argv[x]);
-			create_stack_a(&stack, a);
+			create_stack_a(&stack_a, a);
 /* 			printf("DIR STACK:%p\n", stack); */
 			x++;
 			//printf("%d\n", stack->cont);
 		}
+	ft_diferent(stack_a);
+
 //empiezan las pruebas, como cambia la forma de pedir los datos, dejo un ejemplo de cada...
-	showme(stack);
+/* 	showme(stack);
 	ft_ra (&stack, 0);
 	showme(stack);
 	ft_sa(stack, 0); 
 	showme(stack);
 	stack = ft_rra(stack, 0);
-	showme(stack);
+	showme(stack); */
 		//cierro prueba.
 
 /* 	printf("PRE|%d|\n", stack->cont);
@@ -57,11 +62,23 @@ int	main(int argc, char *argv[])
 	ft_ra
 	(&stack);
 	printf("POST:%d\n", stack->cont); */
+	ft_pa(&stack_a, &stack_b);
+		printf("como queda el stack_a fuera de la función?\n");
+	showme(stack_a);
+	printf ("Por ahora esta todo todito bien, o no, pero llegas al final jiji.");
 	return (0);
-} 
+}
 
-/*to do:
-1 función que compruebe argumentos iguales para mas de 3 ...
-2 no has probado que se puedan usar los movimientos dobles
-3 quiza estaria bien que todas las funciones pidieran y devolvieran lo mismo...
+/*
+to do:
+
+0 posible leaks en moves_change?
+
+1 el proyecto tiene que aceptar negativos y ¿numeros como "+2"?
+
+2 en check hay que comprar que los numeros esten dentro de los limites.
+
+3 no has probado que se puedan usar los movimientos dobles
+
+4 quiza estaria bien que todas las funciones pidieran y devolvieran lo mismo... peeero.
 */

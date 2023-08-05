@@ -18,19 +18,19 @@ void	create_stack_a(t_list **lst, int n)
 
 	aux = ft_lstnew(n);
 	ft_lstadd_back(lst, aux);
-	printf("contenido [%d]..", (*lst)->cont);
+/* 	printf("contenido [%d]..", (*lst)->cont);
 	printf("contenido aux [%d]..", aux->cont);
 	printf("dirección del modulo 1 [%p]. Siguiente mod [%p] \n", (*lst)->next, aux);
-	printf("DIR LST:%p\n", lst);
+	printf("DIR LST:%p\n", lst); */
 }
 
-void	create_stack_b(t_list *lst_b, int n)
+/* void	create_stack_b(t_list **lst_b, int n)
 {
 	t_list	*aux;
 
 	aux = ft_lstnew(n);
-	ft_lstadd_back(&lst_b, aux);
-}
+	ft_lstadd_back(lst_b, aux);
+} */
 
 
 // prueba...para create stack

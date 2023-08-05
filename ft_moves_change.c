@@ -1,46 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_down.c                                    :+:      :+:    :+:   */
+/*   ft_moves_change.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:36:49 by lortega-          #+#    #+#             */
-/*   Updated: 2023/07/29 22:23:04 by lortega-         ###   ########.fr       */
+/*   Updated: 2023/07/25 21:35:31 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_ra(t_list **lst, int bool)
+//esto esta regumal.
+
+void	ft_pa(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*aux;
+	t_list	*aux_a;
+	t_list	*aux_b;
 
-	aux = *lst;
-	*lst = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(lst, aux);
-	//printf("HEAD[%d].NEXT[%d]\n", (*lst)->cont, (*lst)->next->cont);
-	if (bool == 0)
-		ft_putstr("ra");
-}
-
-void	ft_rb(t_list **lst, int bool)
-{
-	t_list	*aux;
-
-	aux = *lst;
-	*lst = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(lst, aux);
-	printf("HEAD[%d].NEXT[%d]\n", (*lst)->cont, (*lst)->next->cont);
-	if (bool == 0)
-		ft_putstr("rb");
-}
-
-void	ft_rs(t_list **lst, t_list **lst2)
-{
-	ft_ra(lst, 1);
-	ft_rb(lst2, 1);
-	ft_putstr("rs");
+	aux_a = *stack_a;
+	aux_b = *stack_b;
+	aux_a->next = NULL;
+	ft_lstadd_front(stack_b, aux_a);
+	printf("%d\n", aux_a->cont);
+	printf("se printea stackb?\n");
+	showme(*stack_b);
+	printf("como queda el stack_a dentro de la función?\n");
+	/* showme(*stack_a); */
+	/* *stack_a = stack_a->next; */
 }

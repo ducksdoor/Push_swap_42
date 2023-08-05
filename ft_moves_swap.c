@@ -40,7 +40,7 @@ void	ft_sa(t_list *lst, int bool)
 	aux2 = fool;
 	lst->cont = aux1;
 	lst->next->cont = aux2;
-	printf("HEAD[%d].NEXT[%d]\n", lst->cont, (*lst).next->cont);
+	//printf("HEAD[%d].NEXT[%d]\n", lst->cont, (*lst).next->cont);
 	if (bool == 0)
 		ft_putstr("sa");
 }
@@ -62,7 +62,7 @@ void	ft_sb(t_list *lst, int bool)
 	aux2 = fool;
 	lst->cont = aux1;
 	lst->next->cont = aux2;
-	printf("HEAD[%d].NEXT[%d]\n", lst->cont, (*lst).next->cont);
+	//printf("HEAD[%d].NEXT[%d]\n", lst->cont, (*lst).next->cont);
 	if (bool == 0)
 		ft_putstr("sb");
 }

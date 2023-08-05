@@ -70,5 +70,5 @@ t_list	*ft_rrb(t_list *lst, int bool)
 void	ft_rrr(t_list *lst, t_list *lst2)
 {
 	lst = ft_rra(lst, 1);
-	lst = ft_rrb(lst, 1);
+	lst = ft_rrb(lst2, 1);
 }

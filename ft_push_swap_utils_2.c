@@ -19,14 +19,18 @@ void	ft_exit(int a)
 	if (a == 2)
 		ft_putstr("Tienes varios numeros repetidos");
 	if (a == 3)
-		ft_putstr("No has puesto args para pillar? estas despistad@?");
+		ft_putstr("¿Se te olvido poner numeritos?");
+	if (a == 4)
+		ft_putstr("por muchos argumentos que pongas, solo ordeno números.");
+	if (a == 5)
+		ft_putstr("Es normal que con tanto número, repitas alguno...");
 	exit (1);
 }
 
 void	ft_bzero(void *s, int n)
 {
-	char			*dst;
-	int	x;
+	char	*dst;
+	int		x;
 
 	dst = s;
 	x = 0;

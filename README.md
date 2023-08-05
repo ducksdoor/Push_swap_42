@@ -89,4 +89,13 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
     como se ha entrado en las funciones, y por tanto, definir que es lo que se trendra que printear.
 
 6 -> ft_showme.c
+
     Este archivo no se entrego en el proyecto, es la función que me deja comprobar que las cosas están funcionando bien.
+
+7 -> ft_check.c
+
+    Este archivo se encarga de revisar si todos los argumentos entregados al ejercicio son números.
+    tambien comprueba que no existan números repetidos.
+    Por último, comprueba que los numeros entregados esten dentro de los límites permitidos.
+
+    En caso contrario lanzara un error.
