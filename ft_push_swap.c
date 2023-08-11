@@ -63,8 +63,11 @@ int	main(int argc, char *argv[])
 	(&stack);
 	printf("POST:%d\n", stack->cont); */
 	ft_pa(&stack_a, &stack_b);
-		printf("como queda el stack_a fuera de la función?\n");
+	//printf("como queda el stack_a fuera de la función?\n");
+	printf("||||como se queda el stack_a despues de la función||||\n");
 	showme(stack_a);
+	printf("||||como se queda el stack_b despues de la función||||\n");
+	showme(stack_b);
 	printf ("Por ahora esta todo todito bien, o no, pero llegas al final jiji.");
 	return (0);
 }

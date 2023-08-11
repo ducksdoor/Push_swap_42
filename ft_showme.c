@@ -7,7 +7,7 @@ void	showme(t_list *list)
 
 	x = 0;
 	printf ("Este es el resultado del depurador.\n");
-	while (list)
+	while (list->next != NULL)
 	{
 		printf ("MODULO %d, cont= [%d] y apunta a [%d]\n", x, list->cont, list->next->cont);
 
