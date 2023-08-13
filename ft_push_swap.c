@@ -30,11 +30,8 @@ int	main(int argc, char *argv[])
 		ft_exit(3);
 	else if (argc == 3)
 		twoarg (argv[1], argv[2]);
-	else if (argc == 4)
-		threearg (argv[1], argv[2], argv[3]);
- 	//else if (argc == 5)
-		//fourarg (argv[1], argv[2], argv[3], argv[4]); 
-	else if (argc > 4)
+
+	else if (argc >= 4)
 		while (x < argc)
 		{
 			a = 0;
@@ -46,6 +43,12 @@ int	main(int argc, char *argv[])
 			//printf("%d\n", stack->cont);
 		}
 	ft_diferent(stack_a);
+	if (argc == 4)
+		threearg (stack_a);
+	if (argc == 5)
+		ft_four(stack_a, stack_b);
+/* 	else if (argc == 6)
+		ft_four(argv[1], argv[2], argv[3], argv[4], argv[5]); */
 
 //empiezan las pruebas, como cambia la forma de pedir los datos, dejo un ejemplo de cada...
 /* 	showme(stack);
@@ -62,13 +65,18 @@ int	main(int argc, char *argv[])
 	ft_ra
 	(&stack);
 	printf("POST:%d\n", stack->cont); */
-	ft_pa(&stack_a, &stack_b);
-	//printf("como queda el stack_a fuera de la función?\n");
+	//Comprobacion de que el ft_pa funciona:
+/* 	ft_pa(&stack_a, &stack_b);
 	printf("||||como se queda el stack_a despues de la función||||\n");
 	showme(stack_a);
 	printf("||||como se queda el stack_b despues de la función||||\n");
 	showme(stack_b);
 	printf ("Por ahora esta todo todito bien, o no, pero llegas al final jiji.");
+	ft_pa(&stack_a, &stack_b);
+	printf("||||como se queda el stack_a despues de la función||||\n");
+	showme(stack_a);
+	printf("||||como se queda el stack_b despues de la 2 función||||\n");
+	showme(stack_b); */
 	return (0);
 }
 

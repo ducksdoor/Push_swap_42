@@ -1,11 +1,12 @@
 
 #include "ft_push_swap.h"
 
-void	showme(t_list *list)
+void	showme(t_list *list, char *a)
 {
 	int	x;
 
 	x = 0;
+	ft_putstr(a);
 	printf ("Este es el resultado del depurador.\n");
 	while (list->next != NULL)
 	{
@@ -14,5 +15,5 @@ void	showme(t_list *list)
 		list = list->next;
 		x++;
 	}
-	printf ("Aqui se acaba el resultado del depurador.\n");
+	printf ("Aqui se acaba el resultado del depurador.\n\n");
 }

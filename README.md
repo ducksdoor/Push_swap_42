@@ -45,7 +45,7 @@ los casos con 3, 5, 100 y 500 números.
   (tambien intente hacerlo con 4 números... pero he renunciado a la mitad de la ejecución.
   Dejare esta función por algún lado por no haber perdido el tiempo de forma estrepitosa...)
 
-- Caso con 5 números: -
+- Caso con 4 y 5 números: -
 
   Aquí utilizaremos una combinación de algoritmos. Primero, aplicaremos el mismo algoritmo de ordenamiento de selección que en el caso de 3 números para ordenar los primeros 3 números. Luego, moveremos los dos números restantes a la Pila B y aplicaremos el algoritmo de ordenamiento de selección nuevamente para ordenar los 3 números de la Pila A que quedaron. Por último, volveremos a colocar los dos números de la Pila B en la Pila A en orden descendente.
 
@@ -83,7 +83,12 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
     Se trata de funciones que no tienen nada que ver con algoritmia
     Prepara la solución del codigo a lo bruto...
 
-5 -> ft_moves_swap.c / ft_moves_down.c / ft_moves_up.c
+5 ->ft_argo_lite.c
+
+    En este archivo están las funciones necesarias para ordenador los casos con
+    cuatro y cinco numeros distintos.
+
+5 -> ft_moves_swap.c / ft_moves_down.c / ft_moves_up.c / ft_moves_change.c 
     En estos archivos se tipifican los movimientos que ira haciendo el argoritmo del proyecto.
     Como dato a tener en cuenta, en el código de mi proyecto uso un booleano para definir 
     como se ha entrado en las funciones, y por tanto, definir que es lo que se trendra que printear.

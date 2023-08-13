@@ -65,8 +65,41 @@ void	ft_compro(char *argv1, char *argv2, char *argv3)
 	}
 }
 
+int	threearg(t_list *stack_a)
+{
+	int	n_one;
+	int	n_two;
+	int	n_three;
 
-int	threearg(char *argv1, char *argv2, char *argv3)
+	n_one = stack_a->cont;
+	n_two = stack_a->next->cont;
+	n_three = stack_a->next->next->cont;
+	if (n_one == n_two || n_one == n_three || n_two == n_three)
+		ft_exit(2);
+	if (n_one > n_two && n_two < n_three && n_three > n_one)
+		ft_putstr("sa\n");
+	else if (n_one > n_two && n_two > n_three && n_three < n_one)
+		ft_putstr("sa\nrra\n");
+	else if (n_one > n_two && n_two < n_three && n_three > n_two)
+		ft_putstr("ra\n");
+	else if (n_one < n_two && n_two > n_three && n_three > n_one)
+		ft_putstr("sa\nra\n");
+	else if (n_one < n_two && n_two > n_three && n_three < n_two)
+	{
+		ft_putstr("POOORAQUI\n");
+		ft_rra(stack_a, 1);
+	}
+	else
+		ft_putstr("ok");
+	return (0);
+}
+
+
+
+
+
+
+/* int	threearg(char *argv1, char *argv2, char *argv3)
 {
 	int	n_one;
 	int	n_two;
@@ -91,7 +124,7 @@ int	threearg(char *argv1, char *argv2, char *argv3)
 	else
 		ft_putstr("ok");
 	return (0);
-}
+} */
 
 /*
 
