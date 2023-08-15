@@ -12,32 +12,31 @@
 
 #include "ft_push_swap.h"
 
+//modificar esta funcion  yusar las de la minilibft=???? quiza borrar el ultimo nodo y añadir 
+//un nodo al principio que casualmente es el que acabas de eliminar
 
 
-
-//es una fumada.
-t_list	*ft_rra(t_list *lst, int bool)
+void	ft_rra(t_list **lst, int bool)
 {
 	t_list	*aux;
 	t_list	*segurity;
 
-	segurity = lst;
-	aux = lst;
+	segurity = *lst;
+	aux = *lst;
 	aux = ft_lstlast(aux);
-	while (lst->next != aux)
+	while ((*lst) != aux)
 	{
-		lst = lst->next;
+		lst = &(*lst)->next;
 	}
-	lst->next = NULL;
-	lst = segurity;
+	(*lst)->next = NULL;
+	lst = &segurity;
 	ft_lstadd_back(&aux, segurity);
 	//printf("buscamos_el_ultimo aux[%d](%d)\n", aux->cont, aux->next->cont);
-	lst = aux;
+	lst = &aux;
 	//printf("buscamos_el_ultimo lst[%d](%d)\n", lst->cont, aux->next->cont);
 	if (bool == 0)
 		ft_putstr("rra");
 	//showme(lst);
-	return (&*lst);
 }
 
 //rra devuelve valores pero al ser t_list lo hace distinto que las otras ... esto puede ser un problema porque creo que genera leaks...
@@ -69,6 +68,6 @@ t_list	*ft_rrb(t_list *lst, int bool)
 
 void	ft_rrr(t_list *lst, t_list *lst2)
 {
-	lst = ft_rra(lst, 1);
+	ft_rra(&lst, 1);
 	lst = ft_rrb(lst2, 1);
 }

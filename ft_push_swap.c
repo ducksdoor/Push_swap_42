@@ -22,7 +22,7 @@ int	main(int argc, char *argv[])
 	int		a;
 
 	stack_a = NULL;
-	stack_b = ft_lstnew(0);
+	stack_b = NULL;
 	if (!argc)
 		ft_exit(3);
 	x = 1;
@@ -44,7 +44,10 @@ int	main(int argc, char *argv[])
 		}
 	ft_diferent(stack_a);
 	if (argc == 4)
-		threearg (stack_a);
+	{
+		threearg (&stack_a);
+		showme(stack_a, "pasado por threearg");
+	}
 	if (argc == 5)
 		ft_four(stack_a, stack_b);
 /* 	else if (argc == 6)
@@ -85,11 +88,13 @@ to do:
 
 0 posible leaks en moves_change?
 
-1 el proyecto tiene que aceptar negativos y ¿numeros como "+2"?
+1 con el fin de avanzar no estas modificanco las funciones del stck b y solo haces con las de stack a!
 
-2 en check hay que comprar que los numeros esten dentro de los limites.
+2 el proyecto tiene que aceptar negativos y ¿numeros como "+2"?
 
-3 no has probado que se puedan usar los movimientos dobles
+3 en check hay que comprar que los numeros esten dentro de los limites.
 
-4 quiza estaria bien que todas las funciones pidieran y devolvieran lo mismo... peeero.
+4 no has probado que se puedan usar los movimientos dobles
+
+5 quiza estaria bien que todas las funciones pidieran y devolvieran lo mismo... peeero.
 */

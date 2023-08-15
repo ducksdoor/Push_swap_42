@@ -22,25 +22,34 @@ void	ft_four(t_list *stack_a, t_list *stack_b)
 /* 	showme(aux, "abajo esta el showme de aux");
 	showme(stack_a, "abajo esta el showme de stack_a");
 	showme(stack_b, "abajo esta el showme de stack_b"); */
-	while (aux)
+	while (aux != NULL)
 	{
 		printf("|%d|, (%d)\n", aux->cont, x);
 		if (x > aux->cont)
 			x = aux->cont;
-/* 		else
-			ft_ra(&stack_a, 1);
-			showme(stack_a, "||||abajo esta el showme de stack_a en mov|||"); */
+
 		aux = aux->next;
 	}
+	free (aux);//esto asi no borra todo ni de flay//
+	printf("esto es el valor del modulo mas pequeño [%d]\n", x);
+	showme(stack_a, "Aqui no se ha creado nada aun, son los cuatro numeros sin mas.");
 	while (stack_a->cont != x)
 	{
-		ft_ra(&stack_a, 1);
+		ft_ra(&stack_a, 0);
 	}
-	printf("esto es el valor del modulo mas pequeño [%d]\n", x);
-	ft_pa(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
 	showme(stack_a, "abajo esta el showme de stack_a");
 	showme(stack_b, "abajo esta el showme de stack_b");
-	//estas modificando esta función
-	threearg (stack_a);
+
+	threearg (&stack_a);
+
 	showme(stack_a, "!!!abajo esta el showme de stack_a");
+	ft_pa(&stack_b, &stack_a);
+	showme(stack_a, "resultado final!!"); 
 }
+
+
+/* to do 
+
+
+estas modificando el segundo caso */

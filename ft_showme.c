@@ -8,10 +8,14 @@ void	showme(t_list *list, char *a)
 	x = 0;
 	ft_putstr(a);
 	printf ("Este es el resultado del depurador.\n");
-	while (list->next != NULL)
+	while (list != NULL)
 	{
-		printf ("MODULO %d, cont= [%d] y apunta a [%d]\n", x, list->cont, list->next->cont);
-
+        
+        if (list->next != NULL) {
+            printf("MODULO %d, cont= [%d] y apunta a [%d]\n", x, list->cont, list->next->cont);
+        } else {
+            printf("MODULO %d, cont= [%d] y apunta a [NULL]\n", x, list->cont);
+        }
 		list = list->next;
 		x++;
 	}

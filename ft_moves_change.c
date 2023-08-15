@@ -12,23 +12,23 @@
 
 #include "ft_push_swap.h"
 
-void	ft_pa(t_list **stack_a, t_list **stack_b)
+void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*aux;
 
 	aux = *stack_a;
 	*stack_a = aux->next;
 	ft_lstadd_front(stack_b, aux);
-	ft_putstr("pa");
+	ft_putstr("pb");
 }
-void	ft_pb(t_list **stack_b, t_list **stack_a)
+void	ft_pa(t_list **stack_b, t_list **stack_a)
 {
 	t_list	*aux;
 
 	aux = *stack_b;
 	*stack_b = aux->next;
 	ft_lstadd_front(stack_a, aux);
-	ft_putstr("pb");
+	ft_putstr("pa");
 }
 
 

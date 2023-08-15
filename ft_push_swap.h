@@ -36,7 +36,7 @@ void	ft_bzero(void *s, int n);
 void	*ft_calloc(size_t count, size_t size);
 
 int		twoarg(char *argv1, char *argv2);
-int		threearg(t_list *stack_a);
+void	threearg(t_list **stack_a);
 void	ft_compro(char *argv1, char *argv2, char *argv3);
 void	ft_four(t_list	*stack_a, t_list	*stack_b);
 /* 
@@ -51,9 +51,9 @@ void	ft_sa(t_list *lst, int bool);
 void	ft_sb(t_list *lst, int bool);
 void	ft_ss(t_list *lst, t_list *lst2);
 void	ft_ra(t_list **lst, int bool);
-void	ft_rb(t_list **lst, int bool);
-void	ft_rs(t_list **lst, t_list **lst2);
-t_list	*ft_rra(t_list *lst, int bool);
+void	ft_rb(t_list *lst, int bool);
+void	ft_rs(t_list *lst, t_list *lst2);
+void	ft_rra(t_list **lst, int bool);
 t_list	*ft_rrb(t_list *lst, int bool);
 void	ft_rrr(t_list *lst, t_list *lst2);
 void	ft_pa(t_list **stack_a, t_list **stack_b);

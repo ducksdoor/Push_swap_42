@@ -65,34 +65,38 @@ void	ft_compro(char *argv1, char *argv2, char *argv3)
 	}
 }
 
-int	threearg(t_list *stack_a)
+void	threearg(t_list **stack_a)
 {
 	int	n_one;
 	int	n_two;
 	int	n_three;
 
-	n_one = stack_a->cont;
-	n_two = stack_a->next->cont;
-	n_three = stack_a->next->next->cont;
-	if (n_one == n_two || n_one == n_three || n_two == n_three)
-		ft_exit(2);
+	n_one = (*stack_a)->cont;
+	n_two = (*stack_a)->next->cont;
+	n_three = (*stack_a)->next->next->cont;
 	if (n_one > n_two && n_two < n_three && n_three > n_one)
-		ft_putstr("sa\n");
+		ft_sa(*stack_a, 0);
 	else if (n_one > n_two && n_two > n_three && n_three < n_one)
-		ft_putstr("sa\nrra\n");
-	else if (n_one > n_two && n_two < n_three && n_three > n_two)
-		ft_putstr("ra\n");
-	else if (n_one < n_two && n_two > n_three && n_three > n_one)
-		ft_putstr("sa\nra\n");
-	else if (n_one < n_two && n_two > n_three && n_three < n_two)
 	{
-		ft_putstr("POOORAQUI\n");
-		ft_rra(stack_a, 1);
+		ft_sa(*stack_a, 0);
+		showme(*stack_a, "&&&&&&&dentro de 3arg&&&&&");
+		//hay que modificar rra!!!!
+		ft_rra(*stack_a, 0);
 	}
+	else if (n_one > n_two && n_two < n_three && n_three < n_one)
+		ft_ra(stack_a, 0);
+	else if (n_one < n_two && n_two > n_three && n_three > n_one)
+	{
+		ft_sa(*stack_a, 0);
+		ft_ra(stack_a, 0);
+	}
+	else if (n_one < n_two && n_two > n_three && n_three < n_two)
+		ft_rra(*stack_a, 0);
 	else
 		ft_putstr("ok");
-	return (0);
 }
+/* to do
+que pasa si los numeros están ordenados? */
 
 
 
