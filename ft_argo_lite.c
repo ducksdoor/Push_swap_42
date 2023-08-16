@@ -12,44 +12,113 @@
 
 #include "ft_push_swap.h"
 
+int	twoarg(char *argv1, char *argv2)
+{
+	int	x;
+	int	y;
+	int	a;
+
+	a = ft_isnumber(argv1);
+	if (a == -1)
+		ft_exit(1);
+	a = ft_isnumber(argv2);
+	if (a == -1)
+		ft_exit(1);
+	x = ft_atoi(argv1);
+	y = ft_atoi(argv2);
+	if (x == y)
+	{
+		ft_putstr("Numeros repetidos\n");
+		exit(1);
+	}
+	if (x > y)
+	{
+		ft_putstr("sa");
+		return (0);
+	}
+/* 	else
+		ft_putstr("ok\n"); */
+	return (0);
+}
+
+void	threearg(t_list **stack_a)
+{
+	int	n_one;
+	int	n_two;
+	int	n_three;
+
+	n_one = (*stack_a)->cont;
+	n_two = (*stack_a)->next->cont;
+	n_three = (*stack_a)->next->next->cont;
+	if (n_one > n_two && n_two < n_three && n_three > n_one)
+		ft_sa(*stack_a, 0);
+	else if (n_one > n_two && n_two > n_three && n_three < n_one)
+	{
+		ft_sa(*stack_a, 0);
+		ft_rra(stack_a, 0);
+	}
+	else if (n_one > n_two && n_two < n_three && n_three < n_one)
+		ft_ra(stack_a, 0);
+	else if (n_one < n_two && n_two > n_three && n_three > n_one)
+	{
+		ft_sa(*stack_a, 0);
+		ft_ra(stack_a, 0);
+	}
+	else if (n_one < n_two && n_two > n_three && n_three < n_two)
+		ft_rra(stack_a, 0);
+/* 	else
+		ft_putstr("ok"); */
+}
+
+int	search(t_list *stack_a)
+{
+	int	x;
+
+	x = stack_a->cont;
+	while (stack_a != NULL)
+	{
+		if (x > stack_a->cont)
+			x = stack_a->cont;
+		stack_a = stack_a->next;
+	}
+	free(stack_a);
+	return (x);
+}
+
 void	ft_four(t_list *stack_a, t_list *stack_b)
 {
 	int		x;
-	t_list	*aux;
 
-	aux = stack_a;
-	x = aux->cont;
-/* 	showme(aux, "abajo esta el showme de aux");
-	showme(stack_a, "abajo esta el showme de stack_a");
-	showme(stack_b, "abajo esta el showme de stack_b"); */
-	while (aux != NULL)
-	{
-		printf("|%d|, (%d)\n", aux->cont, x);
-		if (x > aux->cont)
-			x = aux->cont;
-
-		aux = aux->next;
-	}
-	free (aux);//esto asi no borra todo ni de flay//
-	printf("esto es el valor del modulo mas pequeño [%d]\n", x);
-	showme(stack_a, "Aqui no se ha creado nada aun, son los cuatro numeros sin mas.");
+	x = search(stack_a);
 	while (stack_a->cont != x)
 	{
 		ft_ra(&stack_a, 0);
 	}
 	ft_pb(&stack_a, &stack_b);
-	showme(stack_a, "abajo esta el showme de stack_a");
-	showme(stack_b, "abajo esta el showme de stack_b");
-
 	threearg (&stack_a);
-
-	showme(stack_a, "!!!abajo esta el showme de stack_a");
 	ft_pa(&stack_b, &stack_a);
-	showme(stack_a, "resultado final!!"); 
+	showme(stack_a, "resultado final!!");
 }
 
 
-/* to do 
+void	ft_five(t_list *stack_a, t_list *stack_b)
+{
+	int		x;
 
-
-estas modificando el segundo caso */
+	x = search(stack_a);
+	while (stack_a->cont != x)
+	{
+		ft_ra(&stack_a, 0);
+	}
+	ft_pb(&stack_a, &stack_b);
+	x = search(stack_a);
+	while (stack_a->cont != x)
+	{
+		ft_ra(&stack_a, 0);
+	}
+	ft_pb(&stack_a, &stack_b);
+	threearg (&stack_a);
+	ft_pa(&stack_b, &stack_a);
+	ft_pa(&stack_b, &stack_a);
+	showme(stack_a, "resultado final!!");
+}

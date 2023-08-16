@@ -20,48 +20,25 @@ void	ft_ra(t_list **stack_a, int bool)
 	*stack_a = aux->next;
 	aux->next = NULL;
 	ft_lstadd_back(stack_a, aux);
-	//showme(*stack_a, "pepito");
 	if (bool == 0)
 		ft_putstr("ra");
 }
-/*{
-	t_list *first_node;
-	t_list *last_node;
 
-	first_node = lst;
-	lst = lst->next;
-
-	last_node = first_node;
-	while (last_node->next != NULL)
-	{
-		last_node = last_node->next;
-	}
-
-	last_node->next = first_node;
-	first_node->next = NULL;
-
-	lst = first_node;
-	showme(lst, "pepito");
-	if (bool == 0)
-		ft_putstr("ra");
-}
-*/
-void	ft_rb(t_list *lst, int bool)
+void	ft_rb(t_list **stack_b, int bool)
 {
 	t_list	*aux;
 
-	aux = lst;
-	lst = aux->next;
+	aux = *stack_b;
+	*stack_b = aux->next;
 	aux->next = NULL;
-	ft_lstadd_back(&lst, aux);
-	printf("HEAD[%d].NEXT[%d]\n", lst->cont, lst->next->cont);
+	ft_lstadd_back(stack_b, aux);
 	if (bool == 0)
 		ft_putstr("rb");
 }
 
-void	ft_rs(t_list *lst, t_list *lst2)
+void	ft_rs(t_list **lst, t_list **lst2)
 {
-	ft_ra(&lst, 1);
+	ft_ra(lst, 1);
 	ft_rb(lst2, 1);
 	ft_putstr("rs");
 }

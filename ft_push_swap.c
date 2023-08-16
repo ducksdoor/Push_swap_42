@@ -12,7 +12,18 @@
 
 #include "ft_push_swap.h"
 
+void	ft_main2(t_list *stack_a, t_list *stack_b)
+{
+	int	x;
 
+	x = ft_lstsize(stack_a);
+	if (x == 3)
+		threearg (&stack_a);
+	if (x == 4)
+		ft_four(stack_a, stack_b);
+	else if (x == 5)
+		ft_five(stack_a, stack_b);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -30,57 +41,16 @@ int	main(int argc, char *argv[])
 		ft_exit(3);
 	else if (argc == 3)
 		twoarg (argv[1], argv[2]);
-
-	else if (argc >= 4)
-		while (x < argc)
-		{
-			a = 0;
-			ft_check(argv[x]);
-			a = ft_atoi(argv[x]);
-			create_stack_a(&stack_a, a);
-/* 			printf("DIR STACK:%p\n", stack); */
-			x++;
-			//printf("%d\n", stack->cont);
-		}
-	ft_diferent(stack_a);
-	if (argc == 4)
+	while (x < argc)
 	{
-		threearg (&stack_a);
-		showme(stack_a, "pasado por threearg");
+		a = 0;
+		ft_check(argv[x]);
+		a = ft_atoi(argv[x]);
+		create_stack(&stack_a, a);
+		x++;
 	}
-	if (argc == 5)
-		ft_four(stack_a, stack_b);
-/* 	else if (argc == 6)
-		ft_four(argv[1], argv[2], argv[3], argv[4], argv[5]); */
-
-//empiezan las pruebas, como cambia la forma de pedir los datos, dejo un ejemplo de cada...
-/* 	showme(stack);
-	ft_ra (&stack, 0);
-	showme(stack);
-	ft_sa(stack, 0); 
-	showme(stack);
-	stack = ft_rra(stack, 0);
-	showme(stack); */
-		//cierro prueba.
-
-/* 	printf("PRE|%d|\n", stack->cont);
-	
-	ft_ra
-	(&stack);
-	printf("POST:%d\n", stack->cont); */
-	//Comprobacion de que el ft_pa funciona:
-/* 	ft_pa(&stack_a, &stack_b);
-	printf("||||como se queda el stack_a despues de la función||||\n");
-	showme(stack_a);
-	printf("||||como se queda el stack_b despues de la función||||\n");
-	showme(stack_b);
-	printf ("Por ahora esta todo todito bien, o no, pero llegas al final jiji.");
-	ft_pa(&stack_a, &stack_b);
-	printf("||||como se queda el stack_a despues de la función||||\n");
-	showme(stack_a);
-	printf("||||como se queda el stack_b despues de la 2 función||||\n");
-	showme(stack_b); */
-	return (0);
+	ft_diferent(stack_a);
+	ft_main2(stack_a, stack_b);
 }
 
 /*
@@ -88,13 +58,13 @@ to do:
 
 0 posible leaks en moves_change?
 
-1 con el fin de avanzar no estas modificanco las funciones del stck b y solo haces con las de stack a!
+1 el proyecto tiene que aceptar negativos y ¿numeros como "+2"?
 
-2 el proyecto tiene que aceptar negativos y ¿numeros como "+2"?
+2 en check hay que comprar que los numeros esten dentro de los limites.
 
-3 en check hay que comprar que los numeros esten dentro de los limites.
+3 no has probado que se puedan usar los movimientos dobles
 
-4 no has probado que se puedan usar los movimientos dobles
+4 quiza estaria bien que todas las funciones pidieran y devolvieran lo mismo... peeero.
 
-5 quiza estaria bien que todas las funciones pidieran y devolvieran lo mismo... peeero.
+5 mejorar el algoritmo para 5 numeros de tal forma que use tambien rra y no solo ra.... 
 */

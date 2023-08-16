@@ -35,26 +35,22 @@ int		ft_atoi(const char *str);
 void	ft_bzero(void *s, int n);
 void	*ft_calloc(size_t count, size_t size);
 
+void	ft_main2(t_list *stack_a, t_list *stack_b);
 int		twoarg(char *argv1, char *argv2);
 void	threearg(t_list **stack_a);
-void	ft_compro(char *argv1, char *argv2, char *argv3);
+int		search(t_list *stack_a);
 void	ft_four(t_list	*stack_a, t_list	*stack_b);
-/* 
-int		fourarg(char *argv1, char *argv2, char *argv3, char *argv4);
-void	all_case_one(int a, int b, int c, int d);
-void	all_case_four(int a, int b, int c, int d);
-void	all_case_two(int a, int b, int c, int d);*/
+void	ft_five(t_list *stack_a, t_list *stack_b);
 
-void	create_stack_a(t_list **lst, int n);
-/* void	create_stack_b(t_list *lst_b, int n); */
+void	create_stack(t_list **lst, int n);
 void	ft_sa(t_list *lst, int bool);
 void	ft_sb(t_list *lst, int bool);
 void	ft_ss(t_list *lst, t_list *lst2);
-void	ft_ra(t_list **lst, int bool);
-void	ft_rb(t_list *lst, int bool);
-void	ft_rs(t_list *lst, t_list *lst2);
+void	ft_ra(t_list **stack_a, int bool);
+void	ft_rb(t_list **stack_b, int bool);
+void	ft_rs(t_list **lst, t_list **lst2);
 void	ft_rra(t_list **lst, int bool);
-t_list	*ft_rrb(t_list *lst, int bool);
+void	ft_rrb(t_list **lst, int bool);
 void	ft_rrr(t_list *lst, t_list *lst2);
 void	ft_pa(t_list **stack_a, t_list **stack_b);
 void	ft_pb(t_list **stack_b, t_list **stack_a);
@@ -66,5 +62,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 //t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(int n);
-int	    ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 #endif

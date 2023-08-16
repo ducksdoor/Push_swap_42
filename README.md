@@ -1,5 +1,23 @@
 
-# Push_swap_42 (README EN CONSTRUCCIÓN)
+# Push_swap_42 (README EN CONSTRUCCIÓN 35%)
+
+### Recomendaciones generales:
+
+- No se te ocurra intentar sacar todos los casos posibles para cuatro numeros distintos...
+en serio... es un perdida de tiempo.
+
+- Cuando hagas la función que recoloca tres numeros no lo gestiones usando int.
+Para el futuro es mejor que lo gestiones todo usando listas. te lo agradeceras.
+
+- Cuanto antes crees una función que te muestre todos los nodos de la lista, antes podras 
+comprobar que todo esta bien.
+
+- Cuando gestiones los movimientos. Intenta que todos reciban las listas de la misma forma, 
+No es que sea absolutamente necesario, pero cuanto menos problemas y trampas te pongas a ti mismo/a,
+mejor.
+
+
+
 
 ### En primer lugar vamos a explicar los movimientos:
 
@@ -78,15 +96,11 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
     En este archivo están las funciones útiles para este proyecto de la libft.
     Podria usar la libft. si. Pero me dio pereza...
     
-4 -> ft_foo.c / ft_foo_utils.c
-
-    Se trata de funciones que no tienen nada que ver con algoritmia
-    Prepara la solución del codigo a lo bruto...
 
 5 ->ft_argo_lite.c
 
-    En este archivo están las funciones necesarias para ordenador los casos con
-    cuatro y cinco numeros distintos.
+    En este archivo están las funciones necesarias para ordenador todos los casos en los que 
+    como mucho te ponen cinco numeros como argumento.
 
 5 -> ft_moves_swap.c / ft_moves_down.c / ft_moves_up.c / ft_moves_change.c 
     En estos archivos se tipifican los movimientos que ira haciendo el argoritmo del proyecto.

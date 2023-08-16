@@ -12,62 +12,55 @@
 
 #include "ft_push_swap.h"
 
-//modificar esta funcion  yusar las de la minilibft=???? quiza borrar el ultimo nodo y añadir 
-//un nodo al principio que casualmente es el que acabas de eliminar
-
-
 void	ft_rra(t_list **lst, int bool)
 {
 	t_list	*aux;
-	t_list	*segurity;
+	t_list	*last_node;
 
-	segurity = *lst;
 	aux = *lst;
-	aux = ft_lstlast(aux);
-	while ((*lst) != aux)
+	last_node = NULL;
+	if (*lst == NULL || (*lst)->next == NULL)
+		return ;
+
+	while (aux->next != NULL)
 	{
-		lst = &(*lst)->next;
+		last_node = aux;
+		aux = aux->next;
 	}
-	(*lst)->next = NULL;
-	lst = &segurity;
-	ft_lstadd_back(&aux, segurity);
-	//printf("buscamos_el_ultimo aux[%d](%d)\n", aux->cont, aux->next->cont);
-	lst = &aux;
-	//printf("buscamos_el_ultimo lst[%d](%d)\n", lst->cont, aux->next->cont);
+	if (last_node != NULL)
+		last_node->next = NULL;
+	ft_lstadd_front(lst, aux);
+
 	if (bool == 0)
 		ft_putstr("rra");
-	//showme(lst);
 }
 
-//rra devuelve valores pero al ser t_list lo hace distinto que las otras ... esto puede ser un problema porque creo que genera leaks...
-
-
-t_list	*ft_rrb(t_list *lst, int bool)
+void	ft_rrb(t_list **lst, int bool)
 {
 	t_list	*aux;
-	t_list	*segurity;
+	t_list	*last_node;
 
-	segurity = lst;
-	aux = lst;
-	aux = ft_lstlast(aux);
-	while (lst->next != aux)
+	aux = *lst;
+	last_node = NULL;
+	if (*lst == NULL || (*lst)->next == NULL)
+		return ;
+
+	while (aux->next != NULL)
 	{
-		lst = lst->next;
+		last_node = aux;
+		aux = aux->next;
 	}
-	lst->next = NULL;
-	lst = segurity;
-	ft_lstadd_back(&aux, segurity);
-	//printf("buscamos_el_ultimo aux[%d](%d)\n", aux->cont, aux->next->cont);
-	lst = aux;
-	//printf("buscamos_el_ultimo lst[%d](%d)\n", lst->cont, aux->next->cont);
+	if (last_node != NULL)
+		last_node->next = NULL;
+	ft_lstadd_front(lst, aux);
+
 	if (bool == 0)
 		ft_putstr("rrb");
-	//showme(lst);
-	return (&*lst);
 }
 
 void	ft_rrr(t_list *lst, t_list *lst2)
 {
 	ft_rra(&lst, 1);
-	lst = ft_rrb(lst2, 1);
+	ft_rrb(&lst2, 1);
+	ft_putstr("rrr");
 }
