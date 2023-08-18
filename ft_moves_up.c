@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_swap.c                                    :+:      :+:    :+:   */
+/*   ft_moves_up.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,10 +12,10 @@
 
 #include "ft_push_swap.h"
 
-void	ft_rra(t_list **lst, int bool)
+void	ft_rra(t_list_plus **lst, int bool)
 {
-	t_list	*aux;
-	t_list	*last_node;
+	t_list_plus	*aux;
+	t_list_plus	*last_node;
 
 	aux = *lst;
 	last_node = NULL;
@@ -35,10 +35,10 @@ void	ft_rra(t_list **lst, int bool)
 		ft_putstr("rra");
 }
 
-void	ft_rrb(t_list **lst, int bool)
+void	ft_rrb(t_list_plus **lst, int bool)
 {
-	t_list	*aux;
-	t_list	*last_node;
+	t_list_plus	*aux;
+	t_list_plus	*last_node;
 
 	aux = *lst;
 	last_node = NULL;
@@ -58,7 +58,7 @@ void	ft_rrb(t_list **lst, int bool)
 		ft_putstr("rrb");
 }
 
-void	ft_rrr(t_list *lst, t_list *lst2)
+void	ft_rrr(t_list_plus *lst, t_list_plus *lst2)
 {
 	ft_rra(&lst, 1);
 	ft_rrb(&lst2, 1);

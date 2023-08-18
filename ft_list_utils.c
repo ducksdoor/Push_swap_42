@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/27 15:36:49 by lortega-          #+#    #+#             */
+/*   Updated: 2023/07/25 21:35:31 by lortega-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-t_list	*ft_lstnew(int n)
+t_list_plus	*ft_lstnew(int n)
 {
-	t_list	*head;
+	t_list_plus	*head;
 
-	head = malloc(sizeof(t_list));
+	head = malloc(sizeof(t_list_plus));
 	if (!head)
 		return (NULL);
 	head->cont = n;
@@ -13,7 +24,7 @@ t_list	*ft_lstnew(int n)
 	return (head);
 }
 
-/* void	ft_lstiter(t_list *lst, void (*f)(void *))
+/* void	ft_lstiter(t_list_plus *lst, void (*f)(void *))
 {
 	while (lst)
 	{
@@ -22,7 +33,7 @@ t_list	*ft_lstnew(int n)
 	}
 } */
 
-t_list	*ft_lstlast(t_list *lst)
+t_list_plus	*ft_lstlast(t_list_plus *lst)
 {
 	if (lst)
 	{
@@ -33,10 +44,21 @@ t_list	*ft_lstlast(t_list *lst)
 	return (NULL);
 }
 
-/* t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list_plus	*ft_lstlast_two(t_list_plus *lst)
 {
-	t_list	*temp;
-	t_list	*r;
+	if (lst)
+	{
+		while (lst->next->next)
+				lst = lst->next;
+		return (lst);
+	}
+	return (NULL);
+}
+
+/* t_list_plus	*ft_lstmap(t_list_plus *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list_plus	*temp;
+	t_list_plus	*r;
 	void	*rr;
 
 	if (!lst || !f || !del)
@@ -60,7 +82,7 @@ t_list	*ft_lstlast(t_list *lst)
 
 
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list_plus *lst)
 {
 	int	x;
 

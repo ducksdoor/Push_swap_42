@@ -12,9 +12,9 @@
 
 #include "ft_push_swap.h"
 
-void	ft_pb(t_list **stack_a, t_list **stack_b)
+void	ft_pb(t_list_plus **stack_a, t_list_plus **stack_b)
 {
-	t_list	*aux;
+	t_list_plus	*aux;
 
 	aux = *stack_a;
 	*stack_a = aux->next;
@@ -22,9 +22,9 @@ void	ft_pb(t_list **stack_a, t_list **stack_b)
 	ft_putstr("pb");
 }
 
-void	ft_pa(t_list **stack_b, t_list **stack_a)
+void	ft_pa(t_list_plus **stack_b, t_list_plus **stack_a)
 {
-	t_list	*aux;
+	t_list_plus	*aux;
 
 	aux = *stack_b;
 	*stack_b = aux->next;
@@ -34,11 +34,11 @@ void	ft_pa(t_list **stack_b, t_list **stack_a)
 
 
 //copia de seguridad con sus printf
-/* void	ft_pa(t_list **stack_a, t_list **stack_b)
+/* void	ft_pa(t_list_plus **stack_a, t_list_plus **stack_b)
 {
-	t_list	*aux_a;
+	t_list_plus	*aux_a;
 	//int	aux_b;
-	//t_list	*auxx_b;
+	//t_list_plus	*auxx_b;
 
 	aux_a = *stack_a;
 	//aux_b = aux_a->cont;

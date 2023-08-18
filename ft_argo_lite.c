@@ -41,7 +41,7 @@ int	twoarg(char *argv1, char *argv2)
 	return (0);
 }
 
-void	threearg(t_list **stack_a)
+void	threearg(t_list_plus **stack_a)
 {
 	int	n_one;
 	int	n_two;
@@ -70,55 +70,39 @@ void	threearg(t_list **stack_a)
 		ft_putstr("ok"); */
 }
 
-int	search(t_list *stack_a)
-{
-	int	x;
 
-	x = stack_a->cont;
-	while (stack_a != NULL)
-	{
-		if (x > stack_a->cont)
-			x = stack_a->cont;
-		stack_a = stack_a->next;
-	}
-	free(stack_a);
-	return (x);
-}
-
-void	ft_four(t_list *stack_a, t_list *stack_b)
+void	ft_four(t_list_plus *stack_a, t_list_plus *stack_b)
 {
 	int		x;
+	t_list_plus	*aux;
 
 	x = search(stack_a);
-	while (stack_a->cont != x)
+	aux = ft_lstlast(stack_a);
+	if (aux->cont == x)
+		ft_rra(&stack_a, 0);
+	else
 	{
-		ft_ra(&stack_a, 0);
+		while (stack_a->cont != x)
+		{
+			ft_ra(&stack_a, 0);
+		}
 	}
 	ft_pb(&stack_a, &stack_b);
 	threearg (&stack_a);
 	ft_pa(&stack_b, &stack_a);
-	showme(stack_a, "resultado final!!");
 }
 
 
-void	ft_five(t_list *stack_a, t_list *stack_b)
+void	ft_five(t_list_plus *stack_a, t_list_plus *stack_b)
 {
-	int		x;
 
-	x = search(stack_a);
-	while (stack_a->cont != x)
-	{
-		ft_ra(&stack_a, 0);
-	}
+	moves_in_five(&stack_a);
 	ft_pb(&stack_a, &stack_b);
-	x = search(stack_a);
-	while (stack_a->cont != x)
-	{
-		ft_ra(&stack_a, 0);
-	}
+	moves_in_five(&stack_a);
 	ft_pb(&stack_a, &stack_b);
 	threearg (&stack_a);
 	ft_pa(&stack_b, &stack_a);
 	ft_pa(&stack_b, &stack_a);
-	showme(stack_a, "resultado final!!");
 }
+
+//	showme(stack_b, "que pasa?");

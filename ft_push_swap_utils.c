@@ -42,7 +42,8 @@ int	ft_isnumber(char *number)
 	cont = 0;
 	while (number[cont])
 	{
-		if (number[cont] > 47 && number[cont] < 58)
+		if ((number[cont] > 47 && number[cont] < 58) ||
+			number[cont] == 45 || number[cont] == 43)
 			cont++;
 		else
 			return (-1);

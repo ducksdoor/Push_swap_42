@@ -12,9 +12,9 @@
 
 #include "ft_push_swap.h"
 
-void	create_stack(t_list **lst, int n)
+void	create_stack(t_list_plus **lst, int n)
 {
-	t_list	*aux;
+	t_list_plus	*aux;
 
 	aux = ft_lstnew(n);
 	ft_lstadd_back(lst, aux);
@@ -29,7 +29,7 @@ void	create_stack(t_list **lst, int n)
 // prueba...para create stack
 /* int	main(int argc, char *argv[])
 {
-	//t_list	*stack;
+	//t_list_plus	*stack;
 	//int	a;
 	//int x;
 

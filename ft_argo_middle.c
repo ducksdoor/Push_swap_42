@@ -1,44 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_down.c                                    :+:      :+:    :+:   */
+/*   ft_argo_middle.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:36:49 by lortega-          #+#    #+#             */
-/*   Updated: 2023/07/29 22:23:04 by lortega-         ###   ########.fr       */
+/*   Updated: 2023/07/25 21:35:31 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_ra(t_list_plus **stack_a, int bool)
+void	ft_index(t_list_plus *stack_a)
 {
+	int			z;
+	int			x;
+	int			y;
 	t_list_plus	*aux;
 
-	aux = *stack_a;
-	*stack_a = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(stack_a, aux);
-	if (bool == 0)
-		ft_putstr("ra");
+	z = 2;
+	y = ft_lstsize(stack_a);
+
+	aux = stack_a;
+	x = search(stack_a);
+	while (aux)
+	{
+		if (aux->cont == x)
+			aux->inde = 1;
+		aux = aux->next;
+	}
+	while (y != 0)
+	{
+		x = ft_search_loop(stack_a, x, z);
+		y--;
+		z++;
+	}
 }
 
-void	ft_rb(t_list_plus **stack_b, int bool)
+void	ft_100(t_list_plus *stack_a, t_list_plus *stack_b)
 {
-	t_list_plus	*aux;
+	if (!stack_a && !stack_b)
+		exit(1);
 
-	aux = *stack_b;
-	*stack_b = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(stack_b, aux);
-	if (bool == 0)
-		ft_putstr("rb");
+
+	printf("Estamos en ello");
 }
 
-void	ft_rs(t_list_plus **lst, t_list_plus **lst2)
-{
-	ft_ra(lst, 1);
-	ft_rb(lst2, 1);
-	ft_putstr("rs");
-}

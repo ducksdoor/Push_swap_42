@@ -1,44 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_down.c                                    :+:      :+:    :+:   */
+/*   ft_argo_lite_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:36:49 by lortega-          #+#    #+#             */
-/*   Updated: 2023/07/29 22:23:04 by lortega-         ###   ########.fr       */
+/*   Updated: 2023/07/25 21:35:31 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_ra(t_list_plus **stack_a, int bool)
+int	search(t_list_plus *stack_a)
 {
-	t_list_plus	*aux;
+	int	x;
 
-	aux = *stack_a;
-	*stack_a = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(stack_a, aux);
-	if (bool == 0)
-		ft_putstr("ra");
+	x = stack_a->cont;
+	while (stack_a != NULL)
+	{
+		if (x > stack_a->cont)
+			x = stack_a->cont;
+		stack_a = stack_a->next;
+	}
+	free(stack_a);
+	return (x);
 }
 
-void	ft_rb(t_list_plus **stack_b, int bool)
+void	moves_in_five(t_list_plus **stack_a)
 {
+	int			x;
 	t_list_plus	*aux;
+	t_list_plus	*aux2;
 
-	aux = *stack_b;
-	*stack_b = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(stack_b, aux);
-	if (bool == 0)
-		ft_putstr("rb");
-}
-
-void	ft_rs(t_list_plus **lst, t_list_plus **lst2)
-{
-	ft_ra(lst, 1);
-	ft_rb(lst2, 1);
-	ft_putstr("rs");
+	x = search(*stack_a);
+	aux = ft_lstlast(*stack_a);
+	aux2 = ft_lstlast_two(*stack_a);
+	if (aux->cont == x)
+		ft_rra(stack_a, 0);
+	else if (aux2->cont == x)
+	{
+		ft_rra(stack_a, 0);
+		ft_rra(stack_a, 0);
+	}
+	else
+	{
+		while ((*stack_a)->cont != x)
+		{
+			ft_ra(stack_a, 0);
+		}
+	}
 }

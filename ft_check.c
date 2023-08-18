@@ -21,7 +21,7 @@ void	ft_check(char *a)
 		ft_exit(4);
 }
 
-void	ft_diferent(t_list *stack_a)
+void	ft_diferent(t_list_plus *stack_a)
 {
 	int	*test;
 	int	x;

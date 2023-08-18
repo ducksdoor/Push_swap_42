@@ -97,10 +97,13 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
     Podria usar la libft. si. Pero me dio pereza...
     
 
-5 ->ft_argo_lite.c
+4 ->ft_argo_lite.c ft_argo_lite_utils.c
 
     En este archivo están las funciones necesarias para ordenador todos los casos en los que 
     como mucho te ponen cinco numeros como argumento.
+
+5 ->ft_argo_middle.c ft_argo_middle_utils.c
+    Archivo que ordena de 6 numeros a 100 numeros.
 
 5 -> ft_moves_swap.c / ft_moves_down.c / ft_moves_up.c / ft_moves_change.c 
     En estos archivos se tipifican los movimientos que ira haciendo el argoritmo del proyecto.

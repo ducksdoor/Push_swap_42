@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_down.c                                    :+:      :+:    :+:   */
+/*   ft_argo_middle_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:36:49 by lortega-          #+#    #+#             */
-/*   Updated: 2023/07/29 22:23:04 by lortega-         ###   ########.fr       */
+/*   Updated: 2023/07/25 21:35:31 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_ra(t_list_plus **stack_a, int bool)
+int	ft_search_loop(t_list_plus *stack_a, int y, int z)
 {
+	int	x;
 	t_list_plus	*aux;
 
-	aux = *stack_a;
-	*stack_a = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(stack_a, aux);
-	if (bool == 0)
-		ft_putstr("ra");
-}
+	aux = stack_a;
+	x = 2147483647;
+	while (stack_a != NULL)
+	{
+		if (y < stack_a->cont && x > stack_a->cont)
+			x = stack_a->cont;
+		stack_a = stack_a->next;
+	}
+	free(stack_a);
 
-void	ft_rb(t_list_plus **stack_b, int bool)
-{
-	t_list_plus	*aux;
-
-	aux = *stack_b;
-	*stack_b = aux->next;
-	aux->next = NULL;
-	ft_lstadd_back(stack_b, aux);
-	if (bool == 0)
-		ft_putstr("rb");
-}
-
-void	ft_rs(t_list_plus **lst, t_list_plus **lst2)
-{
-	ft_ra(lst, 1);
-	ft_rb(lst2, 1);
-	ft_putstr("rs");
+	while (aux)
+	{
+		if (aux->cont == x)
+			aux->inde = z;
+		aux = aux->next;
+	}
+	return (x);
 }

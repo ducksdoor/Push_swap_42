@@ -19,13 +19,13 @@ void ft_swap(int *a, int *b) {
     *a = *b;
 	*b = aux;
 }
-void stk_swap(t_list *head) {
+void stk_swap(t_list_plus *head) {
     ft_swap(&(head->cont), &(head->next->cont));
 }*/
 
-void	ft_sa(t_list *lst, int bool)
+void	ft_sa(t_list_plus *lst, int bool)
 {
-	t_list	*aux;
+	t_list_plus	*aux;
 
 	int	aux1;
 	int	aux2;
@@ -45,9 +45,9 @@ void	ft_sa(t_list *lst, int bool)
 		ft_putstr("sa");
 }
 
-void	ft_sb(t_list *lst, int bool)
+void	ft_sb(t_list_plus *lst, int bool)
 {
-	t_list *aux;
+	t_list_plus *aux;
 
 	int aux1;
 	int aux2;
@@ -67,7 +67,7 @@ void	ft_sb(t_list *lst, int bool)
 		ft_putstr("sb");
 }
 
-void	ft_ss(t_list *lst, t_list *lst2)
+void	ft_ss(t_list_plus *lst, t_list_plus *lst2)
 {
 	ft_sa(lst, 1);
 	ft_sb(lst2, 1);
