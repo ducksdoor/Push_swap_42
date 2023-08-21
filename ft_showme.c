@@ -30,19 +30,27 @@ void	showme(t_list_plus *list, char *a)
 	printf ("Este es el resultado del depurador.\n");
 	while (list != NULL)
 	{
-		
 		if (list->next != NULL)
 		{
+			if ((list->inde >> 0) & 1)
+				printf("Yu ultimo valor binario es 1\n");
+			else
+				printf("Yu ultimo valor binario es 0\n");
 			printf ("este es el binario de [%d] =", list->inde);
 			printBinary(list->inde);
-			printf("MODULO %d, contenido= [%d], indice= [%d] y apunta a [%d]\n", x, list->cont, list->inde, list->next->cont);
+			printf("MODULO %d, contenido= [%d], indice= [%d] y apunta a [%d]\n\n", x, list->cont, list->inde, list->next->cont);
 		}
 		else
 		{
+			if ((list->inde >> 0) & 1)
+				printf("hola\n");
+			else
+				printf("caracola\n");
 			printf ("este es el binario de [%d] =", list->inde);
 			printBinary(list->inde);
-			printf("MODULO %d, contenido= [%d], indice= [%d] y apunta a [NULL]\n", x, list->cont, list->inde);
+			printf("MODULO %d, contenido= [%d], indice= [%d] y apunta a [NULL]\n\n", x, list->cont, list->inde);
 		}
+
 		list = list->next;
 		x++;
 	}

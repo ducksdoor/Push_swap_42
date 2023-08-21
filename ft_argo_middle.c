@@ -40,10 +40,52 @@ void	ft_index(t_list_plus *stack_a)
 
 void	ft_100(t_list_plus *stack_a, t_list_plus *stack_b)
 {
+	int	i;
+	t_list_plus	*aux;
+/* 	int	x;
+	int	n;
+	int ppp; */
+
+/* 	n = 0; */
 	if (!stack_a && !stack_b)
 		exit(1);
+	i = 0;
+	aux = stack_a;
+	while (aux)
+	{
+		if ((stack_a->inde >> 0) & 1)
+		{
+			printf("hola\n");
+			aux = aux->next;
+		}
+		else
+		{
+			printf("caracola\n");
+			aux = aux->next;
+		}
+	}
 
-
-	printf("Estamos en ello");
+/* 	while (n <= 25)
+	{
+		x = 0;
+		i = 0;
+		while (x <= 25)
+		{
+			if ((stack_a->inde >> i) & 1)
+				ft_ra(&stack_a, 0);
+			else
+				ft_pb(&stack_b, &stack_a);
+			x++;
+			i++;
+			ppp = ft_lstsize(stack_b);
+			while (ppp != 1)
+			{
+				ppp = ft_lstsize(stack_b);
+				ft_pa(&stack_a, &stack_b);
+			}
+		}
+		n++;
+	} */
+	printf("Estamos en ello\n");
 }
 
