@@ -1,7 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_showme.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/27 15:36:49 by lortega-          #+#    #+#             */
+/*   Updated: 2023/07/25 21:35:31 by lortega-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-//busqueda por internet de ideas//
 
 void	printBinary(int num) 
 {
@@ -19,8 +28,6 @@ void	printBinary(int num)
 	printf("\n");
 }
 
-
-
 void	showme(t_list_plus *list, char *a)
 {
 	int	x;
@@ -33,9 +40,9 @@ void	showme(t_list_plus *list, char *a)
 		if (list->next != NULL)
 		{
 			if ((list->inde >> 0) & 1)
-				printf("Yu ultimo valor binario es 1\n");
+				printf("Tu ultimo valor binario es 1\n");
 			else
-				printf("Yu ultimo valor binario es 0\n");
+				printf("Tu ultimo valor binario es 0\n");
 			printf ("este es el binario de [%d] =", list->inde);
 			printBinary(list->inde);
 			printf("MODULO %d, contenido= [%d], indice= [%d] y apunta a [%d]\n\n", x, list->cont, list->inde, list->next->cont);

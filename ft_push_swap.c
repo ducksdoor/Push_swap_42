@@ -15,6 +15,7 @@
 void	ft_main2(t_list_plus *stack_a, t_list_plus *stack_b)
 {
 	int	x;
+	int cl;
 
 	x = ft_lstsize(stack_a);
 	if (x == 3)
@@ -23,14 +24,13 @@ void	ft_main2(t_list_plus *stack_a, t_list_plus *stack_b)
 		ft_four(stack_a, stack_b);
 	else if (x == 5)
 		ft_five(stack_a, stack_b);
-	else if (x > 5 && x <= 100)
+	else
 	{
 		ft_index(stack_a);
-		ft_100(stack_a, stack_b);
+		cl = ft_contloop(stack_a);
+		ft_100(&stack_a, &stack_b, cl);
 	}
-	else
-		printf("Estamos en ello");
-	showme(stack_a, "resultado final!!");
+	showme(stack_a, "resultado final del stack_a!!");
 }
 
 int	main(int argc, char *argv[])

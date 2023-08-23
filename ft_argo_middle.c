@@ -12,6 +12,28 @@
 
 #include "ft_push_swap.h"
 
+int	ft_contloop(t_list_plus *stack_a)
+{
+	int y;
+	int n;
+	t_list_plus	*aux;
+
+	aux = stack_a;
+	y = 0;
+	n = 1;
+	while (aux)
+	{
+		while(y < 31)
+		{
+			if (((aux->inde >> y) & 1) && y > n)
+				n = y;
+			y++;
+		}
+		y = 0;
+		aux = aux->next;
+	}
+	return(n);
+}
 void	ft_index(t_list_plus *stack_a)
 {
 	int			z;
@@ -19,7 +41,7 @@ void	ft_index(t_list_plus *stack_a)
 	int			y;
 	t_list_plus	*aux;
 
-	z = 2;
+	z = 1;
 	y = ft_lstsize(stack_a);
 
 	aux = stack_a;
@@ -27,7 +49,7 @@ void	ft_index(t_list_plus *stack_a)
 	while (aux)
 	{
 		if (aux->cont == x)
-			aux->inde = 1;
+			aux->inde = 0;
 		aux = aux->next;
 	}
 	while (y != 0)
@@ -38,54 +60,67 @@ void	ft_index(t_list_plus *stack_a)
 	}
 }
 
-void	ft_100(t_list_plus *stack_a, t_list_plus *stack_b)
+void	ft_100(t_list_plus **stack_a, t_list_plus **stack_b, int cl)
 {
 	int	i;
 	t_list_plus	*aux;
-/* 	int	x;
+	t_list_plus	*aux_b;
+	t_list_plus *aux_c;
+	int	x;
 	int	n;
-	int ppp; */
+	int ppp;
+	int looking;
 
 /* 	n = 0; */
+
 	if (!stack_a && !stack_b)
 		exit(1);
+	looking = 0;
 	i = 0;
-	aux = stack_a;
-	while (aux)
+	ppp = 0;
+	while (i <= cl)
 	{
-		if ((stack_a->inde >> 0) & 1)
+		aux = *stack_a;
+		n = 0;
+		x = ft_lstsize(aux);
+		while (n < x)
 		{
-			printf("hola\n");
-			aux = aux->next;
-		}
-		else
-		{
-			printf("caracola\n");
-			aux = aux->next;
-		}
-	}
-
-/* 	while (n <= 25)
-	{
-		x = 0;
-		i = 0;
-		while (x <= 25)
-		{
-			if ((stack_a->inde >> i) & 1)
-				ft_ra(&stack_a, 0);
-			else
-				ft_pb(&stack_b, &stack_a);
-			x++;
-			i++;
-			ppp = ft_lstsize(stack_b);
-			while (ppp != 1)
+			if ((aux->inde >> i) & 1)
 			{
-				ppp = ft_lstsize(stack_b);
-				ft_pa(&stack_a, &stack_b);
+				aux = aux->next;
+				ft_ra(stack_a, 0);
 			}
+			else
+			{
+				aux = aux->next;
+				ft_pb(stack_a, stack_b);
+				aux_b = *stack_b;
+				if (aux_b->inde == 0 || aux_b->inde == 1)
+				{
+					ft_rb(stack_b, 0);
+					looking++;
+					ppp++;
+				}
+			}
+			n++;
 		}
-		n++;
-	} */
-	printf("Estamos en ello\n");
+	//showme(stack_b, "resultado del stack_b dentro de ft100 al medio");
+		x = ft_lstsize(*stack_b);
+		x = x - ppp;
+		while (x > 0)
+		{
+			ft_pa(stack_b, stack_a);
+			x--;
+		}
+		i++;
+		aux_c = ft_lstlast(*stack_b);
+		if (aux_c->inde != 0)
+			ft_rrb(stack_b, 0);
+	}
+	while (looking > 0)
+	{
+		ft_pa(stack_b, stack_a);
+		looking--;
+	}
 }
 

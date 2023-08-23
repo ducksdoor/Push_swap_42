@@ -46,7 +46,9 @@ int		search(t_list_plus *stack_a);
 void	ft_four(t_list_plus *stack_a, t_list_plus *stack_b);
 void	moves_in_five(t_list_plus **stack_a);
 void	ft_five(t_list_plus *stack_a, t_list_plus *stack_b);
-void	ft_100(t_list_plus *stack_a, t_list_plus *stack_b);
+
+int		ft_contloop(t_list_plus *stack_a);
+void	ft_100(t_list_plus **stack_a, t_list_plus **stack_b, int cl);
 
 void	create_stack(t_list_plus **lst, int n);
 void	ft_sa(t_list_plus *lst, int bool);
@@ -58,8 +60,8 @@ void	ft_rs(t_list_plus **lst, t_list_plus **lst2);
 void	ft_rra(t_list_plus **lst, int bool);
 void	ft_rrb(t_list_plus **lst, int bool);
 void	ft_rrr(t_list_plus *lst, t_list_plus *lst2);
-void	ft_pa(t_list_plus **stack_a, t_list_plus **stack_b);
-void	ft_pb(t_list_plus **stack_b, t_list_plus **stack_a);
+void	ft_pb(t_list_plus **stack_a, t_list_plus **stack_b);
+void	ft_pa(t_list_plus **stack_b, t_list_plus **stack_a);
 //void	ft_lstdelone(t_list_plus *lst, void (*del)(void*));
 //void	ft_lstclear(t_list_plus **lst, void (*del)(void*));
 void	ft_lstadd_front(t_list_plus **lst, t_list_plus *new);
