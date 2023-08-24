@@ -69,7 +69,11 @@ void	ft_100(t_list_plus **stack_a, t_list_plus **stack_b, int cl)
 	int	x;
 	int	n;
 	int ppp;
+
 	int looking;
+	int n_aux;
+	/* int other_n_aux; */
+	int more;
 
 /* 	n = 0; */
 
@@ -83,6 +87,7 @@ void	ft_100(t_list_plus **stack_a, t_list_plus **stack_b, int cl)
 		aux = *stack_a;
 		n = 0;
 		x = ft_lstsize(aux);
+		more = 0;
 		while (n < x)
 		{
 			if ((aux->inde >> i) & 1)
@@ -95,16 +100,19 @@ void	ft_100(t_list_plus **stack_a, t_list_plus **stack_b, int cl)
 				aux = aux->next;
 				ft_pb(stack_a, stack_b);
 				aux_b = *stack_b;
-				if (aux_b->inde == 0 || aux_b->inde == 1)
+				n_aux = 0;
+				if (aux_b->inde == looking || (aux_b->inde == (looking + 1) && more == 1))
 				{
 					ft_rb(stack_b, 0);
-					looking++;
+					n_aux++;
 					ppp++;
+					more++;
 				}
 			}
+			//contador/medidor para cerrar este bucle
 			n++;
 		}
-	//showme(stack_b, "resultado del stack_b dentro de ft100 al medio");
+
 		x = ft_lstsize(*stack_b);
 		x = x - ppp;
 		while (x > 0)
@@ -112,12 +120,31 @@ void	ft_100(t_list_plus **stack_a, t_list_plus **stack_b, int cl)
 			ft_pa(stack_b, stack_a);
 			x--;
 		}
+
+		//controlador del radix
 		i++;
+
 		aux_c = ft_lstlast(*stack_b);
 		if (aux_c->inde != 0)
-			ft_rrb(stack_b, 0);
+		//si el ultimo no es cero:
+		{
+			//n aux es el numero de nodos que se mandaron abajo.
+			if (n_aux == 1)
+			{
+				ft_rrb(stack_b, 0);
+				looking++;
+			}
+			else
+			{
+				ft_rrb(stack_b, 0);
+				ft_pa(stack_b, stack_a);
+				ft_rrb(stack_b, 0);
+				ft_pb(stack_a, stack_b);
+			}
+
+		}
 	}
-	while (looking > 0)
+	while (looking >= 0)
 	{
 		ft_pa(stack_b, stack_a);
 		looking--;

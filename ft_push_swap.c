@@ -30,7 +30,7 @@ void	ft_main2(t_list_plus *stack_a, t_list_plus *stack_b)
 		cl = ft_contloop(stack_a);
 		ft_100(&stack_a, &stack_b, cl);
 	}
-	showme(stack_a, "resultado final del stack_a!!");
+	//showme(stack_a, "resultado final del stack_a!!");
 }
 
 int	main(int argc, char *argv[])
