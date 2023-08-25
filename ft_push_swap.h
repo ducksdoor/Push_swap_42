@@ -48,6 +48,7 @@ void	moves_in_five(t_list_plus **stack_a);
 void	ft_five(t_list_plus *stack_a, t_list_plus *stack_b);
 
 int		ft_contloop(t_list_plus *stack_a);
+void	ft_radix(t_list_plus **stack_a, t_list_plus **stack_b, int i);
 void	ft_100(t_list_plus **stack_a, t_list_plus **stack_b, int cl);
 
 void	create_stack(t_list_plus **lst, int n);

@@ -67,16 +67,13 @@ los casos con 3, 5, 100 y 500 números.
 
   Aquí utilizaremos una combinación de algoritmos. Primero, aplicaremos el mismo algoritmo de ordenamiento de selección que en el caso de 3 números para ordenar los primeros 3 números. Luego, moveremos los dos números restantes a la Pila B y aplicaremos el algoritmo de ordenamiento de selección nuevamente para ordenar los 3 números de la Pila A que quedaron. Por último, volveremos a colocar los dos números de la Pila B en la Pila A en orden descendente.
 
-- Caso con 100 números: -
+- Caso con más números: -
 
-  Para este caso, utilizaremos un algoritmo más eficiente, como el algoritmo de ordenamiento QuickSort o MergeSort. Estos algoritmos nos permiten ordenar rápidamente una gran cantidad de números en un máximo de 12 acciones.
+  Para este caso. Yo he elegido usar el algoritmo Radix.
 
-- Caso con 500 números: - 
 
-  Este caso requerirá un enfoque aún más eficiente debido a la gran cantidad de números. Utilizaremos el algoritmo MergeSort para ordenar los números en un máximo de 12 acciones.
-
-Cada algoritmo se optimiza para minimizar el número de acciones requeridas y asegurar que no excedamos el límite de 12 acciones impuesto por el proyecto. 
-Dependiendo de la cantidad de números, seleccionamos el algoritmo adecuado para lograr la eficiencia deseada en la clasificación.
+Cada algoritmo se optimiza para minimizar el número de acciones requeridas y asegurar que no excedamos el límite.
+Dependiendo de la cantidad de algoritmos, seleccionamos el algoritmo adecuado para lograr la eficiencia deseada en la clasificación.
 En mi proyecto, esta selección se hace en la función main, dentro del archivo ft_push_swap.c
 
 
@@ -103,7 +100,7 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
     como mucho te ponen cinco numeros como argumento.
 
 5 ->ft_argo_middle.c ft_argo_middle_utils.c
-    Archivo que ordena de 6 numeros a 100 numeros.
+    Archivo que ordena de 6 numeros a infinitos numeros.
 
 5 -> ft_moves_swap.c / ft_moves_down.c / ft_moves_up.c / ft_moves_change.c 
     En estos archivos se tipifican los movimientos que ira haciendo el argoritmo del proyecto.
