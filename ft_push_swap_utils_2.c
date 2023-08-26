@@ -14,8 +14,8 @@
 
 void	ft_exit(void)
 {
-	ft_putstr("Error");
-	exit (2);
+	write(2, "Error\n", 6);
+	exit (1);
 }
 
 void	ft_bzero(void *s, int n)

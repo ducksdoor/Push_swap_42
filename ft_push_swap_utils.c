@@ -53,7 +53,7 @@ long	ft_isnumber(char *number)
 
 long	ft_putchar(char s)
 {
-	write (2, &s, 1);
+	write (1, &s, 1);
 	return (1);
 }
 
@@ -66,7 +66,7 @@ void	ft_putstr(char *s)
 		ft_putchar(*s);
 		s++;
 	}
-	write (2, "\n", 1);
+	write (1, "\n", 1);
 }
 
 void	*ft_calloc(size_t count, size_t size)
