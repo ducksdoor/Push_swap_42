@@ -12,24 +12,43 @@
 
 #include "ft_push_swap.h"
 
+void	ft_perfect(t_list_plus *stack_a)
+{
+	t_list_plus	*aux;
+
+	aux = stack_a;
+	while (aux->next != NULL)
+	{
+		if (aux->cont < aux->next->cont)
+		{
+			aux = aux->next;
+			if (aux->next == NULL)
+				exit(1);
+		}
+		if (aux->cont > aux->next->cont)
+			return ;
+	}
+	exit(1);
+}
+
 void	ft_check(char *a)
 {
 	int	x;
 
 	x = ft_isnumber(a);
 	if (x == -1)
-		ft_exit(4);
+		ft_exit();
 }
 
 void	ft_diferent(t_list_plus *stack_a)
 {
-	int	*test;
-	int	x;
-	int	y;
-	int	z;
+	long	*test;
+	long	x;
+	long	y;
+	long	z;
 
 	z = ft_lstsize(stack_a);
-	test = (int *)malloc(sizeof(char *) * z);
+	test = (long *)malloc(sizeof(char *) * z);
 	x = 0;
 	y = 0;
 	while (x < z)
@@ -37,15 +56,13 @@ void	ft_diferent(t_list_plus *stack_a)
 		test[x] = stack_a->cont;
 		while (y < x)
 		{
-			//printf("estas comparando[%d], con [%d]\n",test[y], test[x]);
 			if (test[y] == test[x])
-				ft_exit(5);
+				ft_exit();
 			y++;
 		}
 		y = 0;
 		stack_a = stack_a->next;
 		x++;
-		//printf("La x vale: [%d]\n", x);
 	}
 	free(test);
 }

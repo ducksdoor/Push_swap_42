@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -35,31 +34,31 @@ void	ft_lstadd_front(t_list_plus **lst, t_list_plus *new)
 	}
 }
 
-
-/* void	ft_lstclear(t_list_plus **lst, void (*del)(void*))
+void	ft_lstclear(t_list_plus **lst)
 {
-	t_list_plus	*temp;
-	t_list_plus	*more;
+	t_list_plus	*node;
+	t_list_plus	*tmp;
 
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	temp = *lst;
-	while (temp)
+	tmp = *lst;
+	if (!tmp)
+		return ;
+	while (tmp)
 	{
-		more = temp->next;
-		del (temp->content);
-		free(temp);
-		temp = more;
+		node = tmp->next;
+		ft_lstdelone(tmp);
+		tmp = node;
 	}
-	free(temp);
 	*lst = NULL;
-} */
+}
 
-/* void	ft_lstdelone(t_list_plus *lst, void (*del)(void*))
+void	ft_lstdelone(t_list_plus *lst)
 {
-	if (lst == NULL || del == NULL)
+	if (!lst)
 		return ;
-	del(lst->content);
-	free(lst);
-	lst = NULL;
-} */
+	if (lst)
+	{
+		free(lst);
+	}
+}

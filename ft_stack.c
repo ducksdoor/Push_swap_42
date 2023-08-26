@@ -12,34 +12,15 @@
 
 #include "ft_push_swap.h"
 
-void	create_stack(t_list_plus **lst, int n)
+void	create_stack(t_list_plus **lst, long n)
 {
 	t_list_plus	*aux;
 
+	if (n < -2147483648 || n > 2147483647)
+	{
+		ft_exit();
+		exit(1);
+	}
 	aux = ft_lstnew(n);
 	ft_lstadd_back(lst, aux);
-/* 	printf("contenido [%d]..", (*lst)->cont);
-	printf("contenido aux [%d]..", aux->cont);
-	printf("dirección del modulo 1 [%p]. Siguiente mod [%p] \n", (*lst)->next, aux);
-	printf("DIR LST:%p\n", lst); */
 }
-
-
-
-// prueba...para create stack
-/* int	main(int argc, char *argv[])
-{
-	//t_list_plus	*stack;
-	//int	a;
-	//int x;
-
-	if (!argc)
-		exit(1);
-	x = 1;
-	while (x < argc)
-	{
-		a = ft_atoi(argv[x]);
-		create_stack(&stack, a);
-		x++;
-	}
-} */

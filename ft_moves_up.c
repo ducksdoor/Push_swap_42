@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void	ft_rra(t_list_plus **lst, int bool)
+void	ft_rra(t_list_plus **lst, long bool)
 {
 	t_list_plus	*aux;
 	t_list_plus	*last_node;
@@ -21,7 +21,6 @@ void	ft_rra(t_list_plus **lst, int bool)
 	last_node = NULL;
 	if (*lst == NULL || (*lst)->next == NULL)
 		return ;
-
 	while (aux->next != NULL)
 	{
 		last_node = aux;
@@ -30,12 +29,11 @@ void	ft_rra(t_list_plus **lst, int bool)
 	if (last_node != NULL)
 		last_node->next = NULL;
 	ft_lstadd_front(lst, aux);
-
 	if (bool == 0)
 		ft_putstr("rra");
 }
 
-void	ft_rrb(t_list_plus **lst, int bool)
+void	ft_rrb(t_list_plus **lst, long bool)
 {
 	t_list_plus	*aux;
 	t_list_plus	*last_node;
@@ -44,7 +42,6 @@ void	ft_rrb(t_list_plus **lst, int bool)
 	last_node = NULL;
 	if (*lst == NULL || (*lst)->next == NULL)
 		return ;
-
 	while (aux->next != NULL)
 	{
 		last_node = aux;
@@ -53,7 +50,6 @@ void	ft_rrb(t_list_plus **lst, int bool)
 	if (last_node != NULL)
 		last_node->next = NULL;
 	ft_lstadd_front(lst, aux);
-
 	if (bool == 0)
 		ft_putstr("rrb");
 }

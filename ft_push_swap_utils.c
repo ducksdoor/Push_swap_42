@@ -12,11 +12,11 @@
 
 #include "ft_push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
-	int	i;
+	long	res;
+	long	sign;
+	long	i;
 
 	i = 0;
 	res = 0;
@@ -35,15 +35,15 @@ int	ft_atoi(const char *str)
 	return (res * sign);
 }
 
-int	ft_isnumber(char *number)
+long	ft_isnumber(char *number)
 {
-	int	cont;
+	long	cont;
 
 	cont = 0;
 	while (number[cont])
 	{
-		if ((number[cont] > 47 && number[cont] < 58) ||
-			number[cont] == 45 || number[cont] == 43)
+		if ((number[cont] > 47 && number[cont] < 58)
+			|| number[cont] == 45 || number[cont] == 43)
 			cont++;
 		else
 			return (-1);
@@ -51,9 +51,9 @@ int	ft_isnumber(char *number)
 	return (0);
 }
 
-int	ft_putchar(char s)
+long	ft_putchar(char s)
 {
-	write (1, &s, 1);
+	write (2, &s, 1);
 	return (1);
 }
 
@@ -66,7 +66,7 @@ void	ft_putstr(char *s)
 		ft_putchar(*s);
 		s++;
 	}
-	write (1, "\n", 1);
+	write (2, "\n", 1);
 }
 
 void	*ft_calloc(size_t count, size_t size)

@@ -8,15 +8,23 @@ en serio... es un perdida de tiempo.
 
 - Cuando hagas la función que recoloca tres numeros no lo gestiones usando int.
 Para el futuro es mejor que lo gestiones todo usando listas. te lo agradeceras.
+De la misma manera, para comprobar que el numero que te dan esta entre el int max y el int min,
+puedes tratarlos como long, de esta forma, asi, si el input que te dan esta fuera de los limites,
+podras comprobarlo.
 
 - Cuanto antes crees una función que te muestre todos los nodos de la lista, antes podras 
 comprobar que todo esta bien.
 
+- Existen varios algoritmos "De moda" para este proyecto: Radix y Chunks. (Yo usé Radix)
+
+- Antes de crear los movimientos es recomendable saber que algoritmo vas a usar.
+De esta forma evitar crear funciones para movimientos que luego no necesites y te des cuenta
+de que has trabajado para nada. Igualmente, todo lo que programes te da experiencia para un futuro.
+No te agobies! Nunca el tiempo es perdido, solo un recodo mas, de nuestra ilusión... O eso decia la canción...
+
 - Cuando gestiones los movimientos. Intenta que todos reciban las listas de la misma forma, 
 No es que sea absolutamente necesario, pero cuanto menos problemas y trampas te pongas a ti mismo/a,
 mejor.
-
-
 
 
 ### En primer lugar vamos a explicar los movimientos:
@@ -56,6 +64,7 @@ pb : Pone la primera posción del stack A en el stack B.
 
 Hay 4 casos principales que quiero cubrir: 
 los casos con 3, 5, 100 y 500 números. 
+(Si buscas el 100% la diferencia entre 100 y 500 puede ser significativa. en mi caso. ha sido indiferente)
 
 - Caso con 3 números: -
 
@@ -119,6 +128,27 @@ En mi proyecto, esta selección se hace en la función main, dentro del archivo 
 
     En caso contrario lanzara un error.
 
-paginas utiles 
+### Extra: paginas y comandos utiles:
+
+0   Como localizar leaks: Tendras que ponerte imaginativo para saber donde se esta creando el fallo, sin embargo, te dejo aqui la función correspondiente para comprobar
+si tienes o no fugas de memoria.
+
+void	leaks(void)
+{
+	system("leaks -q push_swap");
+}
+
+Para poder usarlo tendras que poner lo siguiente en la función main, justo despues de la iniciación de las variables.
+
+    atexit(leaks);
+
+Recuerda que es importante borrar esa función y linea antes de entregar el proyecto.
+
+1   Esta pagina es un visualizador de movimientos en linea (no tendras que descargar nada).
+Ademas te entrega ya los numeros aleatorios sin repeticiones y separaditos por un espacio realmente es muy util.
 
 https://push-swap-visualizer.vercel.app/
+
+Para poder usar esta pagina es bueno conocer/usar esta linea de comando  " > ~/Desktop/salida " 
+Poniendolo detras de los numeros que le pasas al push swap, creara un archivo con todos los movimientos que ha realizado tu algoritmo. 
+(En mi caso, ponia el archivo en el escritorio con el nombre de salida, de esta manera podia localizarlo facil para cargarlo en la pagina en concreto)

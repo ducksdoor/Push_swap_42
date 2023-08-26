@@ -12,19 +12,10 @@
 
 #include "ft_push_swap.h"
 
-void	ft_exit(int a)
+void	ft_exit(void)
 {
-	if (a == 1)
-		ft_putstr("Solo se pueden algoritmear numeros...");
-	if (a == 2)
-		ft_putstr("Tienes varios numeros repetidos");
-	if (a == 3)
-		ft_putstr("¿Se te olvido poner numeritos?");
-	if (a == 4)
-		ft_putstr("por muchos argumentos que pongas, solo ordeno números.");
-	if (a == 5)
-		ft_putstr("Es normal que con tanto número, repitas alguno...");
-	exit (1);
+	ft_putstr("Error");
+	exit (2);
 }
 
 void	ft_bzero(void *s, int n)

@@ -12,9 +12,9 @@
 
 #include "ft_push_swap.h"
 
-int	ft_search_loop(t_list_plus *stack_a, int y, int z)
+long	ft_search_loop(t_list_plus *stack_a, long y, long z)
 {
-	int	x;
+	long		x;
 	t_list_plus	*aux;
 
 	aux = stack_a;
@@ -26,7 +26,6 @@ int	ft_search_loop(t_list_plus *stack_a, int y, int z)
 		stack_a = stack_a->next;
 	}
 	free(stack_a);
-
 	while (aux)
 	{
 		if (aux->cont == x)
@@ -38,9 +37,9 @@ int	ft_search_loop(t_list_plus *stack_a, int y, int z)
 
 void	ft_index(t_list_plus *stack_a)
 {
-	int			z;
-	int			x;
-	int			y;
+	long		z;
+	long		x;
+	long		y;
 	t_list_plus	*aux;
 
 	z = 1;
@@ -61,10 +60,10 @@ void	ft_index(t_list_plus *stack_a)
 	}
 }
 
-int	ft_contloop(t_list_plus *stack_a)
+long	ft_contloop(t_list_plus *stack_a)
 {
-	int y;
-	int n;
+	long		y;
+	long		n;
 	t_list_plus	*aux;
 
 	aux = stack_a;
@@ -72,7 +71,7 @@ int	ft_contloop(t_list_plus *stack_a)
 	n = 1;
 	while (aux)
 	{
-		while(y < 31)
+		while (y < 31)
 		{
 			if (((aux->inde >> y) & 1) && y > n)
 				n = y;
@@ -81,5 +80,5 @@ int	ft_contloop(t_list_plus *stack_a)
 		y = 0;
 		aux = aux->next;
 	}
-	return(n);
+	return (n);
 }

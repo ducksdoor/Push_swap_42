@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void	ft_ra(t_list_plus **stack_a, int bool)
+void	ft_ra(t_list_plus **stack_a, long bool)
 {
 	t_list_plus	*aux;
 
@@ -24,7 +24,7 @@ void	ft_ra(t_list_plus **stack_a, int bool)
 		ft_putstr("ra");
 }
 
-void	ft_rb(t_list_plus **stack_b, int bool)
+void	ft_rb(t_list_plus **stack_b, long bool)
 {
 	t_list_plus	*aux;
 

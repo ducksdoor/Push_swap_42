@@ -5,12 +5,13 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRCS =	ft_push_swap.c ft_push_swap_utils.c ft_push_swap_utils_2.c\
-		ft_list_utils.c ft_list_utils_2.c \
-		ft_argo_lite.c ft_argo_lite_utils.c \
+		ft_list_utils.c ft_list_utils_2.c\
+		ft_argo_lite.c ft_argo_lite_utils.c\
 		ft_argo_middle.c ft_argo_middle_utils.c\
-		ft_stack.c ft_moves_swap.c ft_moves_down.c ft_moves_up.c\
-		ft_moves_change.c ft_check.c\
-		ft_showme.c
+		ft_stack.c ft_check.c\
+		ft_moves_swap.c ft_moves_down.c ft_moves_up.c\
+		ft_moves_change.c\
+		#ft_showme.c
 	
 OBJS = $(SRCS:.c=.o)
 

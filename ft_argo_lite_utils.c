@@ -12,9 +12,9 @@
 
 #include "ft_push_swap.h"
 
-int	search(t_list_plus *stack_a)
+long	search(t_list_plus *stack_a)
 {
-	int	x;
+	long	x;
 
 	x = stack_a->cont;
 	while (stack_a != NULL)
@@ -29,7 +29,7 @@ int	search(t_list_plus *stack_a)
 
 void	moves_in_five(t_list_plus **stack_a)
 {
-	int			x;
+	long		x;
 	t_list_plus	*aux;
 	t_list_plus	*aux2;
 

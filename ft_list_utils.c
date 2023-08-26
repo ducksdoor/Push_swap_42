@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-t_list_plus	*ft_lstnew(int n)
+t_list_plus	*ft_lstnew(long n)
 {
 	t_list_plus	*head;
 
@@ -23,15 +23,6 @@ t_list_plus	*ft_lstnew(int n)
 	head->next = NULL;
 	return (head);
 }
-
-/* void	ft_lstiter(t_list_plus *lst, void (*f)(void *))
-{
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
-} */
 
 t_list_plus	*ft_lstlast(t_list_plus *lst)
 {
@@ -55,36 +46,9 @@ t_list_plus	*ft_lstlast_two(t_list_plus *lst)
 	return (NULL);
 }
 
-/* t_list_plus	*ft_lstmap(t_list_plus *lst, void *(*f)(void *), void (*del)(void *))
+long	ft_lstsize(t_list_plus *lst)
 {
-	t_list_plus	*temp;
-	t_list_plus	*r;
-	void	*rr;
-
-	if (!lst || !f || !del)
-		return (NULL);
-	r = NULL;
-	while (lst)
-	{
-		rr = f(lst->content);
-		temp = ft_lstnew(rr);
-		if (!temp)
-		{
-			ft_lstclear(&r, del);
-			del(rr);
-			return (NULL);
-		}
-		ft_lstadd_back(&r, temp);
-		lst = lst->next;
-	}
-	return (r);
-} */
-
-
-
-int	ft_lstsize(t_list_plus *lst)
-{
-	int	x;
+	long	x;
 
 	x = 0;
 	while (lst)

@@ -11,25 +11,13 @@
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-/*
-void ft_swap(int *a, int *b) {
-    int aux;
 
-    aux = *a;
-    *a = *b;
-	*b = aux;
-}
-void stk_swap(t_list_plus *head) {
-    ft_swap(&(head->cont), &(head->next->cont));
-}*/
-
-void	ft_sa(t_list_plus *lst, int bool)
+void	ft_sa(t_list_plus *lst, long bool)
 {
 	t_list_plus	*aux;
-
-	int	aux1;
-	int	aux2;
-	int	fool;
+	long		aux1;
+	long		aux2;
+	long		fool;
 
 	aux1 = (*lst).cont;
 	aux = lst;
@@ -40,18 +28,16 @@ void	ft_sa(t_list_plus *lst, int bool)
 	aux2 = fool;
 	lst->cont = aux1;
 	lst->next->cont = aux2;
-	//printf("HEAD[%d].NEXT[%d]\n", lst->cont, (*lst).next->cont);
 	if (bool == 0)
 		ft_putstr("sa");
 }
 
-void	ft_sb(t_list_plus *lst, int bool)
+void	ft_sb(t_list_plus *lst, long bool)
 {
-	t_list_plus *aux;
-
-	int aux1;
-	int aux2;
-	int fool;
+	t_list_plus	*aux;
+	long		aux1;
+	long		aux2;
+	long		fool;
 
 	aux1 = (*lst).cont;
 	aux = lst;
@@ -62,7 +48,6 @@ void	ft_sb(t_list_plus *lst, int bool)
 	aux2 = fool;
 	lst->cont = aux1;
 	lst->next->cont = aux2;
-	//printf("HEAD[%d].NEXT[%d]\n", lst->cont, (*lst).next->cont);
 	if (bool == 0)
 		ft_putstr("sb");
 }
@@ -73,5 +58,3 @@ void	ft_ss(t_list_plus *lst, t_list_plus *lst2)
 	ft_sb(lst2, 1);
 	ft_putstr("ss");
 }
-
-
