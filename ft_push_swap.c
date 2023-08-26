@@ -15,7 +15,7 @@
 void	ft_main2(t_list_plus *stack_a, t_list_plus *stack_b)
 {
 	int	x;
-	int cl;
+	int	cl;
 
 	x = ft_lstsize(stack_a);
 	if (x == 3)
@@ -73,6 +73,5 @@ to do:
 
 3 no has probado que se puedan usar los movimientos dobles
 
-hoy : -8mov arg5num , acepta negativos, start Radix
 */
 
