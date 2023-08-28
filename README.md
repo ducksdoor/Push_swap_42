@@ -125,22 +125,37 @@ Si queremos buscar el 100%, la idea es usar un par de algoritmos. Cada algoritmo
 
   Este archivo se encarga de revisar si todos los argumentos entregados al ejercicio son números. También comprueba que no existan números repetidos, que los números entregados no estén en orden (en caso de que estén en orden, el programa termina inmediatamente) y que los números entregados estén dentro de los números comprendidos como int. En caso de que detecte que algo no está bien, lanzará un mensaje "Error\n" (por la salida de errores) y finalizará el programa.
 
-### En cuarto lugar os dejo funciones necesarias para nuestro algoritmo: (td)
+### En cuarto lugar os dejo los preparativos para nuestro algoritmo: (td)
 
+- Crear un índice para nuestros nodos, de tal forma que el valor que introduzcamos más pequeño tenga el valor 0, mientras que el valor más grande tenga una posición en el índice más alta.
 
+- Entender los Operadores Bitwise (>>, <<, &, |, ^). Como mínimo (>>, &):
+
+El primero (>>) desplaza los bits hacia la derecha; el hueco que se queda libre a la izquierda se rellenaría con un 0.
+Es decir, si hacemos "101 >>" quedaría "010". Si tenemos "10110100001 >>", conseguiríamos "01011010000".
+El segundo (&) compara dos números como verdadero(1) o falso(0). Podemos decir que es parecido a operar con más y con menos. De tal manera que si tienes verdad y verdad (1 & 1), el resultado será verdad(1). Pero si hay un 0 en cualquiera de las dos comparativas, el resultado será 0 (0 & 0 = 0). Otro ejemplo sería: (1011001 & 0111101 = 0011001).
+Para nuestro algoritmo, iremos comparando las posiciones relativas de nuestro número en binario con un "1", que oportunamente, en binario es "01".
+
+- Saber cuantas veces se va a ejecutar el algoritmo, para ello comprobaremos cual es la posión del último 1 dentro de la reprentación binaria del numero más grande de tu lista, por ejemplo, si el número más grande de la lista es el 8 [1000] el último y uno del digito esta en la 4 posión, por tanto, el bucle tendrá que repetirse 4 veces.
+  
 ### En quinto lugar vamos a hablar de Radix: (td)
 
   Es más facil entender como he implementado este algoritmo si vemos cual es la representación grafica de como son los números traducidos al binario.
   
 ![tabla-numeros-binarios](https://github.com/ducksdoor/Push_swap_42/assets/128644496/b832a774-b438-4370-b061-2ef15dadfbd8)
 
-  Nuestro algoritmo va a consistir en un bucle que recorrerá cada nodo encontrando su valor y lo convertirá en un número binario. 
-  Conseguido esto, comprobara en la primera pasada el primer digito del número binario, en la segunda pasada el segundo digito y así sucesivamente hasta que consiga ordenar todos los nodos.
-  Enviara a la última posición del stack_A (ra) todos los nodos en los que su número binario contenga un 1 en la posición que esta comprobando y enviara al principio del stack_B (pb) todos los nodos que contengan un cero. Terminado este ciclo movera todos los nodos del stack_B al inicio del stack_A (pa).
-  Repetira este bucle hasta que la lista quede ordenada. 
   
-  Para poner un ejemplo simple, en una lista de números desordenados de números del 1 al 10 movera al stack_b los números: 0, 2, 4, 6, 8 y 10. 
-  En la segunda ejecución, movera los numeros 0, 1, 4 5, 8 y 9. (dado que aunque en la foto el cero solo tiene un 0, se pueden añadir a la derecha tantos ceros como se necesite). En la tercera ejecución 0, 1, 2, 3, 8, 9, 10... 
+Nuestro algoritmo consistirá en un bucle que recorrerá cada nodo, encontrando su valor y convirtiéndolo en un número binario.
+
+  Para ello usaremos la siguiente línea:
+  if ((aux->inde >> i) & 1)
+ Donde aux->inde es un número positivo que, al usar el operador >>, se "convertirá" en su representación binaria. Los bits se desplazarán tantas veces como se indique en la posición &, y luego se usará & para compararlo con un "1", que como mencionamos antes, es equivalente a 00000001.
+
+Esta línea comparará en cada iteración el dígito del número binario que estamos asignando. Enviarémos a la última posición de stack_A (ra) todos los nodos en los que su número binario contenga un 1 en la posición que se está comprobando. Con un else, enviaremos al principio de stack_B (pb) todos los nodos que contengan un cero.
+
+Terminado este ciclo, moveremos todos los nodos de stack_B al inicio de stack_A (pa). El objetivo es que esta ejecución se repita hasta que la lista quede ordenada.
+
+Para poner un ejemplo simple de cómo funciona este algoritmo, en una lista de números desordenados del 1 al 10, moverá al stack_B los números: 0, 2, 4, 6, 8 y 10. En la segunda ejecución, moverá los números 0, 1, 4, 5, 8 y 9 (aunque en la representación binaria, se puedan añadir ceros a la derecha según sea necesario). En la tercera ejecución, moverá los números 0, 1, 2, 3, 8, 9, 10, y así sucesivamente. 
  
 
 ### Antes de acabar, vamos a hablar de las correcciones (td)
