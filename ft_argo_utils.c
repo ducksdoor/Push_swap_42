@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   ft_argo_lite_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,59 +12,42 @@
 
 #include "ft_push_swap.h"
 
-void	ft_perfect(t_list_plus *stack_a)
+long	search(t_list_plus *stack_a)
 {
-	t_list_plus	*aux;
+	long	x;
 
-	aux = stack_a;
-	while (aux->next != NULL)
+	x = stack_a->cont;
+	while (stack_a != NULL)
 	{
-		if (aux->cont < aux->next->cont)
-		{
-			aux = aux->next;
-			if (aux->next == NULL)
-				exit(1);
-		}
-		if (aux->cont > aux->next->cont)
-			return ;
-	}
-	exit(1);
-}
-
-void	ft_check(char *a)
-{
-	int	x;
-
-	x = ft_isnumber(a);
-	if (x == -1)
-		ft_exit();
-}
-
-void	ft_diferent(t_list_plus *stack_a)
-{
-	long	*test;
-	int		x;
-	int		y;
-	int		z;
-
-	z = ft_lstsize(stack_a);
-	test = (long *)malloc(sizeof(char *) * z);
-	if (test == NULL)
-		return ;
-	x = 0;
-	y = 0;
-	while (x < z)
-	{
-		test[x] = stack_a->cont;
-		while (y < x)
-		{
-			if (test[y] == test[x])
-				ft_exit();
-			y++;
-		}
-		y = 0;
+		if (x > stack_a->cont)
+			x = stack_a->cont;
 		stack_a = stack_a->next;
-		x++;
 	}
-	free(test);
+	free(stack_a);
+	return (x);
+}
+
+void	moves_in_five(t_list_plus **stack_a)
+{
+	long		x;
+	t_list_plus	*aux;
+	t_list_plus	*aux2;
+
+	x = search(*stack_a);
+	aux = ft_lstlast(*stack_a);
+	aux2 = ft_lstlast_two(*stack_a);
+	if (aux->cont == x)
+		ft_rrab(stack_a, 1);
+	else if (aux2->cont == x)
+	{
+		ft_rrab(stack_a, 1);
+		ft_rrab(stack_a, 1);
+	}
+	else
+	{
+		while ((*stack_a)->cont != x)
+		{
+			ft_rab(stack_a, 1);
+		}
+	}
 }

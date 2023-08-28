@@ -105,15 +105,15 @@ Si queremos buscar el 100%, la idea es usar un par de algoritmos. Cada algoritmo
 
   archivo están las funciones útiles para este proyecto de la libft. Podría usar la libft, sí. Pero me dio pereza...
     
-4 ->ft_argo_lite.c ft_argo_lite_utils.c
+4 ->ft_argo_lite.c ft_argo_utils.c
 
   En este archivo están las funciones necesarias para ordenar todos los casos en los que como mucho te ponen cinco números como argumento.
 
-5 ->ft_argo_middle.c ft_argo_middle_utils.c
-    
-  Archivo que ordena de 6 numeros a infinitos numeros.
+5 ->ft_argo_middle.c 
 
-5 -> ft_moves_swap.c  ft_moves_down.c  ft_moves_up.c  ft_moves_change.c 
+  Archivo que ordena de 6 numeros a infinitos numeros. los 
+
+5 -> ft_moves.c
     
   En estos archivos se tipifican los movimientos que irá haciendo el algoritmo del proyecto. Como dato a tener en cuenta, en el código de mi proyecto uso un booleano para definir si se trata de una ejecución de solo un stack como (ra o rb) o de una ejecución de los dos stacks a la vez como (rs). (Es una pena, pero hay que admitir que no he usado rs en ningún momento durante la ejecución de este proyecto). De esta forma, la aplicación es capaz de mostrar en pantalla la opción adecuada.
 
@@ -128,7 +128,7 @@ Si queremos buscar el 100%, la idea es usar un par de algoritmos. Cada algoritmo
 ### En cuarto lugar os dejo funciones necesarias para nuestro algoritmo: (td)
 
 
-### En cuarto lugar vamos a hablar de Radix: (td)
+### En quinto lugar vamos a hablar de Radix: (td)
 
   Es más facil entender como he implementado este algoritmo si vemos cual es la representación grafica de como son los números traducidos al binario.
   
@@ -142,6 +142,20 @@ Si queremos buscar el 100%, la idea es usar un par de algoritmos. Cada algoritmo
   Para poner un ejemplo simple, en una lista de números desordenados de números del 1 al 10 movera al stack_b los números: 0, 2, 4, 6, 8 y 10. 
   En la segunda ejecución, movera los numeros 0, 1, 4 5, 8 y 9. (dado que aunque en la foto el cero solo tiene un 0, se pueden añadir a la derecha tantos ceros como se necesite). En la tercera ejecución 0, 1, 2, 3, 8, 9, 10... 
  
+
+### Antes de acabar, vamos a hablar de las correcciones (td)
+
+Puedes probar distintas cosas dentro de los argumentos que introduces en la función:
+
+- Si no metes argumentos , solo metes un argumento o la lista de argumentos ya esta ordenada. La aplicación tendra que terminar sin mandar nada más.
+- Tiene que dar mensaje "Error\n" siempre que:
+  - Tengas un número repetido.
+  - Tengas un caracter distinto a un número dentro de los argumentos.
+  - Tengas mas de un simbolo de "-" o de "+" seguidos, o esten sin acompañar por numeros. 
+  - tengas cosas raras dentro de los argumentos como 1-1 
+
+
+
 ### Extra: paginas y comandos utiles:
 
 0   Como localizar leaks: Tendrás que usar la imaginación para saber dónde se está creando el fallo, sin embargo, te dejo aquí la función correspondiente para comprobar si tienes o no fugas de memoria.

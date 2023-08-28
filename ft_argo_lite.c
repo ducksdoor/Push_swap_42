@@ -46,21 +46,21 @@ void	threearg(t_list_plus **stack_a)
 	n_two = (*stack_a)->next->cont;
 	n_three = (*stack_a)->next->next->cont;
 	if (n_one > n_two && n_two < n_three && n_three > n_one)
-		ft_sa(*stack_a, 0);
+		ft_sab(*stack_a, 1);
 	else if (n_one > n_two && n_two > n_three && n_three < n_one)
 	{
-		ft_sa(*stack_a, 0);
-		ft_rra(stack_a, 0);
+		ft_sab(*stack_a, 1);
+		ft_rrab(stack_a, 1);
 	}
 	else if (n_one > n_two && n_two < n_three && n_three < n_one)
-		ft_ra(stack_a, 0);
+		ft_rab(stack_a, 1);
 	else if (n_one < n_two && n_two > n_three && n_three > n_one)
 	{
-		ft_sa(*stack_a, 0);
-		ft_ra(stack_a, 0);
+		ft_sab(*stack_a, 1);
+		ft_rab(stack_a, 1);
 	}
 	else if (n_one < n_two && n_two > n_three && n_three < n_one)
-		ft_rra(stack_a, 0);
+		ft_rrab(stack_a, 1);
 }
 
 void	ft_four(t_list_plus *stack_a, t_list_plus *stack_b)
@@ -71,17 +71,17 @@ void	ft_four(t_list_plus *stack_a, t_list_plus *stack_b)
 	x = search(stack_a);
 	aux = ft_lstlast(stack_a);
 	if (aux->cont == x)
-		ft_rra(&stack_a, 0);
+		ft_rrab(&stack_a, 1);
 	else
 	{
 		while (stack_a->cont != x)
 		{
-			ft_ra(&stack_a, 0);
+			ft_rab(&stack_a, 1);
 		}
 	}
-	ft_pb(&stack_a, &stack_b);
+	ft_pab(&stack_a, &stack_b, 0);
 	threearg (&stack_a);
-	ft_pa(&stack_b, &stack_a);
+	ft_pab(&stack_b, &stack_a, 0);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 }
@@ -89,10 +89,10 @@ void	ft_four(t_list_plus *stack_a, t_list_plus *stack_b)
 void	ft_five(t_list_plus *stack_a, t_list_plus *stack_b)
 {
 	moves_in_five(&stack_a);
-	ft_pb(&stack_a, &stack_b);
+	ft_pab(&stack_a, &stack_b, 0);
 	moves_in_five(&stack_a);
-	ft_pb(&stack_a, &stack_b);
+	ft_pab(&stack_a, &stack_b, 0);
 	threearg (&stack_a);
-	ft_pa(&stack_b, &stack_a);
-	ft_pa(&stack_b, &stack_a);
+	ft_pab(&stack_b, &stack_a, 0);
+	ft_pab(&stack_b, &stack_a, 0);
 }

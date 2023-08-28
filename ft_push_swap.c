@@ -24,7 +24,7 @@ void	ft_main2(t_list_plus *stack_a)
 	{
 		ft_index(stack_a);
 		cl = ft_contloop(stack_a);
-		ft_100(&stack_a, &stack_b, cl);
+		ft_algoritm(&stack_a, &stack_b, cl);
 	}
 	else if (x == 3)
 		threearg (&stack_a);
@@ -34,10 +34,10 @@ void	ft_main2(t_list_plus *stack_a)
 		ft_five(stack_a, stack_b);
 	exit (1);
 }
-/* void	leaks(void)
+void	leaks(void)
 {
 	system("leaks -q push_swap");
-} */
+} 
 
 int	main(int argc, char *argv[])
 {
@@ -45,13 +45,11 @@ int	main(int argc, char *argv[])
 	long		x;
 	long		a;
 
-/* 	atexit(leaks); */
+	atexit(leaks);
 	stack_a = NULL;
-	if (!argc)
-		ft_exit();
-	x = 1;
 	if (argc == 1)
-		ft_exit();
+		exit(1);
+	x = 1;
 	while (x < argc)
 	{
 		a = 0;
@@ -67,3 +65,17 @@ int	main(int argc, char *argv[])
 	ft_perfect(stack_a);
 	ft_main2(stack_a);
 }
+
+/* 
+to do
+
+
+
+->mover realmente el algoritmo de twoarg (?)
+1-1 -->no tiene que salir ...
+
+
+
+
+hacer en el readme un errores comunes ! ^^_ 
+ */
