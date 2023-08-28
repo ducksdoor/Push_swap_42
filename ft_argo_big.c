@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_argo_middle.c                                   :+:      :+:    :+:   */
+/*   ft_argo_big.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,51 +13,51 @@
 #include "ft_push_swap.h"
 
 
-long	ft_search_loop(t_list_plus *stack_a, int y, int z)
+long	ft_search_loop(t_list_plus *stack_a, int num_use, int index_num)
 {
-	int			x;
+	int			next_num;
 	t_list_plus	*aux;
 
 	aux = stack_a;
-	x = 2147483647;
+	next_num = 2147483647;
 	while (stack_a != NULL)
 	{
-		if (y < stack_a->cont && x > stack_a->cont)
-			x = stack_a->cont;
+		if (num_use < stack_a->cont && next_num > stack_a->cont)
+			next_num = stack_a->cont;
 		stack_a = stack_a->next;
 	}
 	free(stack_a);
 	while (aux)
 	{
-		if (aux->cont == x)
-			aux->inde = z;
+		if (aux->cont == next_num)
+			aux->inde = index_num;
 		aux = aux->next;
 	}
-	return (x);
+	return (next_num);
 }
 
 void	ft_index(t_list_plus *stack_a)
 {
-	int			z;
-	int			x;
-	int			y;
+	int			index_num;
+	int			content;
+	int			size;
 	t_list_plus	*aux;
 
-	z = 1;
-	y = ft_lstsize(stack_a);
+	size = ft_lstsize(stack_a);
 	aux = stack_a;
-	x = search(stack_a);
+	content = search(stack_a);
 	while (aux)
 	{
-		if (aux->cont == x)
+		if (aux->cont == content)
 			aux->inde = 0;
 		aux = aux->next;
 	}
-	while (y != 0)
+	index_num = 1;
+	while (size != 0)
 	{
-		x = ft_search_loop(stack_a, x, z);
-		y--;
-		z++;
+		content = ft_search_loop(stack_a, content, index_num);
+		size--;
+		index_num++;
 	}
 }
 
@@ -84,7 +84,7 @@ long	ft_contloop(t_list_plus *stack_a)
 	return (n);
 }
 
-void	ft_radix(t_list_plus **stack_a, t_list_plus **stack_b, long i)
+void	ft_radix(t_list_plus **stack_a, t_list_plus **stack_b, int i)
 {
 	t_list_plus	*aux;
 	long		n;
@@ -109,9 +109,9 @@ void	ft_radix(t_list_plus **stack_a, t_list_plus **stack_b, long i)
 	}
 }
 
-void	ft_algoritm(t_list_plus **stack_a, t_list_plus **stack_b, long cl)
+void	ft_algoritm(t_list_plus **stack_a, t_list_plus **stack_b, int cl)
 {
-	long		i;
+	int			i;
 	long		x;
 	t_list_plus	*aux;
 

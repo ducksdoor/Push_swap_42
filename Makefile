@@ -6,7 +6,7 @@ RM = rm -f
 
 SRCS =	ft_push_swap.c ft_push_swap_utils.c ft_push_swap_utils_2.c\
 		ft_list_utils.c ft_list_utils_2.c\
-		ft_argo_lite.c ft_argo_utils.c ft_argo_middle.c\
+		ft_argo_lite.c ft_argo_utils.c ft_argo_big.c\
 		ft_stack.c ft_check.c\
 		ft_moves.c\
 		#ft_showme.c

@@ -14,8 +14,8 @@
 
 void	ft_main2(t_list_plus *stack_a)
 {
-	long		x;
-	long		cl;
+	int		x;
+	int			cl;
 	t_list_plus	*stack_b;
 
 	stack_b = NULL;
@@ -42,8 +42,8 @@ void	leaks(void)
 int	main(int argc, char *argv[])
 {
 	t_list_plus	*stack_a;
-	long		x;
-	long		a;
+	int		x;
+	int		a;
 
 	atexit(leaks);
 	stack_a = NULL;

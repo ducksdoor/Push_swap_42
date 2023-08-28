@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_argo_lite_utils.c                               :+:      :+:    :+:   */
+/*   ft_argo_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,17 +14,17 @@
 
 long	search(t_list_plus *stack_a)
 {
-	long	x;
+	int	min_num;
 
-	x = stack_a->cont;
+	min_num = stack_a->cont;
 	while (stack_a != NULL)
 	{
-		if (x > stack_a->cont)
-			x = stack_a->cont;
+		if (min_num > stack_a->cont)
+			min_num = stack_a->cont;
 		stack_a = stack_a->next;
 	}
 	free(stack_a);
-	return (x);
+	return (min_num);
 }
 
 void	moves_in_five(t_list_plus **stack_a)
