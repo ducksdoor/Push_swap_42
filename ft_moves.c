@@ -54,7 +54,6 @@ void	ft_rab(t_list_plus **lst, int bool)
 		ft_putstr("rs");
 }
 
-
 void	ft_rrab(t_list_plus **lst, int bool)
 {
 	t_list_plus	*aux;

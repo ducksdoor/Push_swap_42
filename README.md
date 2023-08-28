@@ -1,5 +1,5 @@
 
-# Push_swap_42 (README EN CONSTRUCCIÓN 80%)
+# Push_swap_42 (README EN CONSTRUCCIÓN 60%)
 
 ### Recomendaciones generales:
 
@@ -109,7 +109,7 @@ Si queremos buscar el 100%, la idea es usar un par de algoritmos. Cada algoritmo
 
   En este archivo están las funciones necesarias para ordenar todos los casos en los que como mucho te ponen cinco números como argumento.
 
-5 ->ft_argo_big.c 
+5 ->ft_argo_middle.c 
 
   Archivo que ordena de 6 numeros a infinitos numeros. los 
 
@@ -121,7 +121,7 @@ Si queremos buscar el 100%, la idea es usar un par de algoritmos. Cada algoritmo
 
   Este archivo no se entregó en el proyecto, es la función que me deja comprobar que las cosas están funcionando bien. Lo dejo por aquí por si a alguien le viene bien.
 
-7 -> ft_check.c ft_stack.c
+7 -> ft_stack_check.c
 
   Este archivo se encarga de revisar si todos los argumentos entregados al ejercicio son números. También comprueba que no existan números repetidos, que los números entregados no estén en orden (en caso de que estén en orden, el programa termina inmediatamente) y que los números entregados estén dentro de los números comprendidos como int. En caso de que detecte que algo no está bien, lanzará un mensaje "Error\n" (por la salida de errores) y finalizará el programa.
 

@@ -27,20 +27,17 @@ typedef struct s_list
 void		showme(t_list_plus *list, char *a);
  */
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
-long		ft_putchar(char s);
 void		ft_putstr(char *s);
-long		ft_isnumber(char *number);
+void		ft_isnumber(char *number);
 void		ft_exit(void);
 long		ft_atoi(const char *str);
-void		ft_bzero(void *s, int n);
-void		*ft_calloc(size_t count, size_t size);
 void		ft_perfect(t_list_plus *stack_a);
 void		ft_check(char *a);
 void		ft_diferent(t_list_plus *stack_a);
 void		ft_index(t_list_plus *stack_a);
 long		ft_search_loop(t_list_plus *stack_a, int num_use, int index_num);
 void		ft_main2(t_list_plus *stack_a);
-long		twoarg(char *argv1, char *argv2);
+void		twoarg(t_list_plus **stack_a);
 void		threearg(t_list_plus **stack_a);
 long		search(t_list_plus *stack_a);
 void		ft_four(t_list_plus *stack_a, t_list_plus *stack_b);

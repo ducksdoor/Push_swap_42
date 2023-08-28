@@ -35,49 +35,61 @@ long	ft_atoi(const char *str)
 	return (res * sign);
 }
 
-long	ft_isnumber(char *number)
+void	ft_isnumber(char *number)
 {
 	long	cont;
 
 	cont = 0;
 	while (number[cont])
 	{
-		if ((number[cont] > 47 && number[cont] < 58)
-			|| number[cont] == 45 || number[cont] == 43)
+		if (number[cont] == 45 || number[cont] == 43)
+		{
+			if (number[cont + 1] > 47 && number[cont +1] < 58)
+				cont++;
+			else
+				ft_exit();
+		}
+		else if ((number[cont] > 47 && number[cont] < 58))
 			cont++;
 		else
-			return (-1);
+			ft_exit();
 	}
-	return (0);
-}
-
-long	ft_putchar(char s)
-{
-	write (1, &s, 1);
-	return (1);
 }
 
 void	ft_putstr(char *s)
 {
+	int	x;
+
 	if (!s)
 		return ;
-	while (*s)
+	x = 0;
+	while (s[x])
 	{
-		ft_putchar(*s);
-		s++;
+		write(1, &s[x], 1);
+		x++;
 	}
 	write (1, "\n", 1);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	void	*des;
+	size_t	x;
+	int		dif;
 
-	if (size > 0 && count > ULONG_MAX / size)
-		return (NULL);
-	des = (void *)malloc(count * size);
-	if (des == NULL)
-		return (NULL);
-	ft_bzero(des, count * size);
-	return (des);
+	x = 0;
+	dif = 0;
+	while ((x < n) && !dif && (s1[x] != '\0') && (s2[x] != '\0'))
+	{
+		dif = (unsigned char)s1[x] - (unsigned char)s2[x];
+		x++;
+	}
+	if (x < n && !dif && (s1[x] == '\0' || s2 [x] == '\0'))
+		dif = (unsigned char)s1[x] - (unsigned char)s2[x];
+	return (dif);
+}
+
+void	ft_exit(void)
+{
+	write(2, "Error\n", 6);
+	exit (1);
 }

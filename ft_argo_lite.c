@@ -12,28 +12,14 @@
 
 #include "ft_push_swap.h"
 
-long	twoarg(char *argv1, char *argv2)
+void	twoarg(t_list_plus **stack_a)
 {
-	long	x;
-	long	y;
-	long	a;
+	t_list_plus	*aux;
 
-	a = ft_isnumber(argv1);
-	if (a == -1)
+	aux = *stack_a;
+	if (aux->cont == aux->next->cont)
 		ft_exit();
-	a = ft_isnumber(argv2);
-	if (a == -1)
-		ft_exit();
-	x = ft_atoi(argv1);
-	y = ft_atoi(argv2);
-	if (x == y)
-		ft_exit();
-	if (x > y)
-	{
-		ft_putstr("sa");
-		return (0);
-	}
-	return (0);
+	ft_sab(*stack_a, 1);
 }
 
 void	threearg(t_list_plus **stack_a)
@@ -95,4 +81,5 @@ void	ft_five(t_list_plus *stack_a, t_list_plus *stack_b)
 	threearg (&stack_a);
 	ft_pab(&stack_b, &stack_a, 0);
 	ft_pab(&stack_b, &stack_a, 0);
+	ft_lstclear(&stack_a);
 }

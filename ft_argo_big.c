@@ -12,7 +12,6 @@
 
 #include "ft_push_swap.h"
 
-
 long	ft_search_loop(t_list_plus *stack_a, int num_use, int index_num)
 {
 	int			next_num;

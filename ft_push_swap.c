@@ -14,7 +14,7 @@
 
 void	ft_main2(t_list_plus *stack_a)
 {
-	int		x;
+	int			x;
 	int			cl;
 	t_list_plus	*stack_b;
 
@@ -26,6 +26,8 @@ void	ft_main2(t_list_plus *stack_a)
 		cl = ft_contloop(stack_a);
 		ft_algoritm(&stack_a, &stack_b, cl);
 	}
+	else if (x == 2)
+		twoarg (&stack_a);
 	else if (x == 3)
 		threearg (&stack_a);
 	else if (x == 4)
@@ -34,18 +36,19 @@ void	ft_main2(t_list_plus *stack_a)
 		ft_five(stack_a, stack_b);
 	exit (1);
 }
+
 void	leaks(void)
 {
 	system("leaks -q push_swap");
-} 
+}
 
 int	main(int argc, char *argv[])
 {
 	t_list_plus	*stack_a;
-	int		x;
-	int		a;
+	int			x;
+	int			a;
 
-	atexit(leaks);
+/* 	atexit(leaks); */
 	stack_a = NULL;
 	if (argc == 1)
 		exit(1);
@@ -53,29 +56,13 @@ int	main(int argc, char *argv[])
 	while (x < argc)
 	{
 		a = 0;
-		ft_check(argv[x]);
+		ft_isnumber(argv[x]);
 		a = ft_atoi(argv[x]);
 		create_stack(&stack_a, a);
 		x++;
 	}
-	if (argc == 3)
-		twoarg (argv[1], argv[2]);
 	ft_diferent(stack_a);
 	ft_index(stack_a);
 	ft_perfect(stack_a);
 	ft_main2(stack_a);
 }
-
-/* 
-to do
-
-
-
-->mover realmente el algoritmo de twoarg (?)
-1-1 -->no tiene que salir ...
-
-
-
-
-hacer en el readme un errores comunes ! ^^_ 
- */
