@@ -1,5 +1,5 @@
 
-# Push_swap_42 (README EN CONSTRUCCIÓN 60%)
+# Push_swap_42 (README EN CONSTRUCCIÓN 80%)
 
 ### Recomendaciones generales:
 
@@ -109,7 +109,7 @@ Si queremos buscar el 100%, la idea es usar un par de algoritmos. Cada algoritmo
 
   En este archivo están las funciones necesarias para ordenar todos los casos en los que como mucho te ponen cinco números como argumento.
 
-5 ->ft_argo_middle.c 
+5 ->ft_argo_big.c 
 
   Archivo que ordena de 6 numeros a infinitos numeros. los 
 
