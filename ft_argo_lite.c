@@ -65,7 +65,8 @@ void	ft_four(t_list_plus *stack_a, t_list_plus *stack_b)
 			ft_rab(&stack_a, 1);
 		}
 	}
-	ft_pab(&stack_a, &stack_b, 0);
+	ft_perfect(stack_a);
+	ft_pab(&stack_a, &stack_b, 1);
 	threearg (&stack_a);
 	ft_pab(&stack_b, &stack_a, 0);
 	ft_lstclear(&stack_a);
@@ -75,9 +76,10 @@ void	ft_four(t_list_plus *stack_a, t_list_plus *stack_b)
 void	ft_five(t_list_plus *stack_a, t_list_plus *stack_b)
 {
 	moves_in_five(&stack_a);
-	ft_pab(&stack_a, &stack_b, 0);
+	ft_perfect(stack_a);
+	ft_pab(&stack_a, &stack_b, 1);
 	moves_in_five(&stack_a);
-	ft_pab(&stack_a, &stack_b, 0);
+	ft_pab(&stack_a, &stack_b, 1);
 	threearg (&stack_a);
 	ft_pab(&stack_b, &stack_a, 0);
 	ft_pab(&stack_b, &stack_a, 0);

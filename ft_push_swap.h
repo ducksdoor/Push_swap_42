@@ -24,7 +24,6 @@ typedef struct s_list
 	struct s_list	*next;
 }			t_list_plus;
 
-void		showme(t_list_plus *list, char *a);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		ft_putstr(char *s);
 void		ft_isnumber(char *number);

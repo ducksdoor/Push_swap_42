@@ -17,10 +17,7 @@ void	create_stack(t_list_plus **lst, long n)
 	t_list_plus	*aux;
 
 	if (n < -2147483648 || n > 2147483647)
-	{
 		ft_exit();
-		exit(1);
-	}
 	aux = ft_lstnew(n);
 	ft_lstadd_back(lst, aux);
 }

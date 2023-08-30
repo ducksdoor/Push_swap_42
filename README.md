@@ -194,3 +194,8 @@ Para poder usar esta página, es bueno conocer/usar esta línea de comando: > ~/
 Poniéndolo detrás de los números que le pasas al push swap, creará un archivo con todos los movimientos que ha realizado tu algoritmo.
 (En mi caso, ponía el archivo en el escritorio con el nombre de "salida", de esta manera podía localizarlo fácilmente para cargarlo en la página en concreto).
 
+2 Tester creado por otro estudiante de 42:
+
+https://github.com/PepeSegura/push_swap_Tester
+
+simplemente descarga el repositorio. copialo en la carpeta de tu proyecto. Dentro de ella ejecuta el comando make m
