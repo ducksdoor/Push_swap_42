@@ -23,9 +23,8 @@ typedef struct s_list
 	long			inde;
 	struct s_list	*next;
 }			t_list_plus;
-/* 
+
 void		showme(t_list_plus *list, char *a);
- */
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		ft_putstr(char *s);
 void		ft_isnumber(char *number);
@@ -36,7 +35,7 @@ void		ft_check(char *a);
 void		ft_diferent(t_list_plus *stack_a);
 void		ft_index(t_list_plus *stack_a);
 long		ft_search_loop(t_list_plus *stack_a, int num_use, int index_num);
-void		ft_main2(t_list_plus *stack_a);
+void		ft_select(t_list_plus *stack_a);
 void		twoarg(t_list_plus **stack_a);
 void		threearg(t_list_plus **stack_a);
 long		search(t_list_plus *stack_a);

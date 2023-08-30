@@ -15,8 +15,9 @@
 long	ft_atoi(const char *str)
 {
 	long	res;
-	long	sign;
-	long	i;
+	int		sign;
+	int		i;
+
 
 	i = 0;
 	res = 0;
@@ -44,7 +45,7 @@ void	ft_isnumber(char *number)
 	{
 		if (number[cont] == 45 || number[cont] == 43)
 		{
-			if (number[cont + 1] > 47 && number[cont +1] < 58)
+			if (number[cont + 1] > 47 && number[cont + 1] < 58)
 				cont++;
 			else
 				ft_exit();

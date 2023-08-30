@@ -1,5 +1,5 @@
 
-# Push_swap_42 (README EN CONSTRUCCIÓN 60%)
+# Push_swap_42 
 
 ### Recomendaciones generales:
 

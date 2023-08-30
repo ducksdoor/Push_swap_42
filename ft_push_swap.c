@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void	ft_main2(t_list_plus *stack_a)
+void	ft_select(t_list_plus *stack_a)
 {
 	int			x;
 	int			cl;
@@ -37,18 +37,18 @@ void	ft_main2(t_list_plus *stack_a)
 	exit (1);
 }
 
-void	leaks(void)
-{
-	system("leaks -q push_swap");
-}
+// void	leaks(void)
+// {
+// 	system("leaks -q push_swap");
+// }
 
 int	main(int argc, char *argv[])
 {
 	t_list_plus	*stack_a;
 	int			x;
-	int			a;
+	long		a;
 
-/* 	atexit(leaks); */
+	// atexit(leaks);
 	stack_a = NULL;
 	if (argc == 1)
 		exit(1);
@@ -58,11 +58,13 @@ int	main(int argc, char *argv[])
 		a = 0;
 		ft_isnumber(argv[x]);
 		a = ft_atoi(argv[x]);
+		if (a < -2147483648 || a > 2147483647)
+			ft_exit();
 		create_stack(&stack_a, a);
 		x++;
 	}
 	ft_diferent(stack_a);
 	ft_index(stack_a);
 	ft_perfect(stack_a);
-	ft_main2(stack_a);
+	ft_select(stack_a);
 }
